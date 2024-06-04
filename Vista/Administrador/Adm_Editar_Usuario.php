@@ -115,7 +115,7 @@
 
             <div data-div="3">
 
-                <label for="telefono">Nuevo Telefono:</label><br>
+                <label for="telefono">Nuevo Telefooono:</label><br>
                 <input type="number" id="telefono" name="telefono" value="<?php echo $usuario['telefono']; ?>" oninput="limitarDigitos(this, 9)"><br>
 
             </div>
