@@ -1,0 +1,154 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Hace que el cuerpo ocupe el 100% de la altura de la ventana */
+}
+
+h2,p {
+    text-align: left;
+    color: #333;
+}
+
+p{
+    margin-top: 5px;
+}
+
+form {
+    margin: 4rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="submit"],
+input[type="reset"] {
+    width: calc(100% - 16px); /* Anchura del input, restando el padding y el borde */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo cuando se hace clic */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border-color: #009adf; /* Cambiar color del borde al hacer clic */
+    outline: none; /* Quita el resaltado predeterminado */
+}
+
+input[type="submit"],input[type="reset"] {
+    margin-top: 2vh;
+    background-color: #009adf;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,input[type="reset"]:hover {
+    background-color: #0ab2fa;
+}
+
+/**/
+.colums {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px;
+}
+
+[data-div="1"],
+[data-div="2"],
+[data-div="3"],
+[data-div="4"] {
+    margin-bottom: 10px;
+}
+
+/*BUTTON*/
+.button {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .button:before,
+  .button:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+  }
+  
+  .button:before {
+    border: 4px solid #333;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button:after {
+    border: 4px solid #009adf;
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+  }
+  
+  .button:hover:before,
+  .button:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .button:hover:after,
+  .button:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 17px 18px 0 18px;
+    transform: rotate(180deg);
+    fill: #333;
+  }
+  
+  .button:hover .button-box,
+  .button:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+  }
+  
