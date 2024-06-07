@@ -129,7 +129,7 @@
         ?>
         <!-- Mostrar el nombre dentro del h2 -->
         <div id="titulo-container">
-            <h2>Bienvenido Administrador - <?php echo $nombre; ?></h2>
+            <h2>Bienvenido Supervisor - <?php echo $nombre; ?></h2>
             
             <!--===== ARCHIVO JS - VALIDACION DE REGISTRO =====-->
             <script src="../../Modelo/Archivos_JS/Notifi_Inicio_Session.js"></script>    
