@@ -33,10 +33,8 @@
         if (password_verify($contrasena, $hash_almacenado)) {                        
 
             // Verificar el cargo del usuario y redirigir a páginas específicas según el cargo
-            if ($id_cargo_usuario == 1) {
-                
-                // Si el Usuario Es administrador
-                
+            if ($id_cargo_usuario == 1) { // Si el Usuario Es administrador
+
                 // Iniciar sesión y almacenar el ID del usuario en la sesión de PHP
                 $_SESSION['usuario'] = $nombre_usuario;
                 $_SESSION['id_cargo'] = $cargo_usuario;
@@ -45,9 +43,7 @@
                 header("Location: ../../Vista/General/Adm_Menu_Navegacion.php");
                 exit();
 
-            } else if ($id_cargo_usuario == 2) {
-
-                // Si el Usuario Es supervisor
+            } else if ($id_cargo_usuario == 2) { // Si el Usuario Es supervisor
                 
                 // Iniciar sesión y almacenar el ID del usuario en la sesión de PHP
                 $_SESSION['usuario'] = $nombre_usuario;
@@ -81,12 +77,6 @@
 
     // Cerrar conexión
     $conn->closeConnection();
-
-    /**
-     * session_start()se utiliza para iniciar una sesión de usuario. 
-     * Luego, el ID del usuario se almacena en la variable $_SESSION, 
-     * que está disponible en todas las páginas que pertenecen a la misma sesión.
-     */
 
 ?>
 
