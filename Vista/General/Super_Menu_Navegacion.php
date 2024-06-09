@@ -156,16 +156,15 @@
 
 
         <div id="iframe-container">
-
+            
             <section id="pagina1"><!-- Aqui mostrar la pagina "GESTION DE USUARIOS"-->                
-                <iframe  src="../Administrador/Adm_Gestion_Usuarios.php"></iframe>
-            </section>
-
-            <section id="pagina2"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" -->
                 <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
             </section>
-            
-            <!--
+
+            <!-- 
+            <section id="pagina2"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" 
+                <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
+            </section>                        
 
             <section id="pagina3"><!-- Aqui mostrar la pagina "DOCUMENTOS"                
                 <iframe  src=""></iframe>
