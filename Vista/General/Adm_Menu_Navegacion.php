@@ -163,14 +163,15 @@
             
             <!--
 
-            <section id="pagina3"><!-- Aqui mostrar la pagina "DOCUMENTOS"                
+            <section id="pagina3"> Aqui mostrar la pagina "DOCUMENTOS"                
                 <iframe  src=""></iframe>
+            </section> -->
+
+            <section id="pagina4"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->            
+                <iframe  src="../Administrador/Adm_Gestion_Mantenimientos.php"></iframe>
             </section>
 
-            <section id="pagina4"><!-- Aqui mostrar la pagina "MANTENIMIENTOS"              
-                <iframe  src=""></iframe>
-            </section>
-
+            <!--
             <section id="pagina5"><!-- Aqui mostrar la pagina "SUMINISTROS"                
                 <iframe  src=""></iframe>
             </section>
