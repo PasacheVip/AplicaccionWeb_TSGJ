@@ -23,7 +23,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
+                <th>Responsable</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
                 <th>Tipo de Mantenimiento</th>
