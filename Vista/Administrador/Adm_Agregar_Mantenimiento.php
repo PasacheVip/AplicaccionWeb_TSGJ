@@ -7,32 +7,28 @@
 </head>
 <body>
     <?php
-    // Incluir el archivo de menú de navegación
-    $menu_path = 'Vista/General/Adm_Menu_Navegacion.php';
-    if (file_exists($menu_path)) {
-        include($menu_path);
-    } else {
-        echo "Error: No se puede encontrar el archivo de menú de navegación.";
-    }
 
     // Se incluye el archivo de conexión a la base de datos
     require_once '../../Controlador/Utilidades/Conexion_BD.php';
 
+    // Crear una instancia de la clase "Conexion_BD"
+    $conn = new Conexion_BD();
+
     // Verificar si la conexión se estableció correctamente
-    if (!$conexion) {
+    if (!$conn) {
         echo "Error: No se pudo conectar a la base de datos.";
     } else {
         // Consulta SQL para obtener los tipos de mantenimiento
-        $query = "SELECT id_tipo_mantenimiento, descripcion FROM tipo_mantenimiento";
-        $result = mysqli_query($conexion, $query);
+        $sql = "SELECT id_tipo_mantenimiento, descripcion FROM tipo_mantenimiento";
+        $result= $conn->executeQuery($sql);
     }
     ?>
     
     <h1>Agregar Mantenimiento</h1>
 
-    <form action="Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
+        <label for="nombre">Encargado Del Mantenimiento:</label>
+        <input type="text" id="encargado" name="encargado" required>
         
         <label for="descripcion">Descripción:</label>
         <input type="text" id="descripcion" name="descripcion" required>
@@ -64,7 +60,8 @@
 
 <?php
 // Cerrar la conexión a la base de datos
-if ($conexion) {
-    mysqli_close($conexion);
+if ($conn) {
+    // Cerrar conexión
+    $conn->closeConnection();
 }
 ?>

@@ -17,15 +17,6 @@
     <title>Gestión de Mantenimientos</title>
 </head>
 <body>
-    <?php
-    // Incluir el archivo de menú de navegación
-    $menu_path = '../../General/Adm_Menu_Navegacion.php';
-    if (file_exists($menu_path)) {
-        include($menu_path);
-    } else {
-        echo "Errror: No se puede encontrar el archivo de menú de navegación.";
-    }
-    ?>
     <h1>Gestión de Mantenimientos</h1>
     <a href="Adm_Agregar_Mantenimiento.php">Agregar Mantenimiento</a>
     <table>
@@ -49,7 +40,7 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row['id_mantenimiento'] . "</td>";
-                    echo "<td>" . $row['nombre'] . "</td>";
+                    echo "<td>" . $row['encargado'] . "</td>";
                     echo "<td>" . $row['descripcion'] . "</td>";
                     echo "<td>" . $row['fecha'] . "</td>";
                     echo "<td>" . $row['tipo_mantenimiento'] . "</td>";

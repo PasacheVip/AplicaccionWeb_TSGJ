@@ -5,22 +5,22 @@ require_once "../../Controlador/Utilidades/Conexion_BD.php";
 // Verifica si la solicitud es de tipo POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Se obtienen los datos del formulario
-    $nombre = $_POST['nombre'];
+    $encargado = $_POST['encargado'];
     $descripcion = $_POST['descripcion'];
     $fecha = $_POST['fecha'];
     $tipo_mantenimiento = $_POST['tipo_mantenimiento'];
 
     // Si el tipo de mantenimiento está vacío, se inserta como NULL
     if (empty($tipo_mantenimiento)) {
-        $tipo_mantenimiento = NULL;
+        $tipo_mantenimiento = NULL; 
     }
 
     // Se crea una instancia de la clase Conexion_BD para establecer la conexión
     $conn = new Conexion_BD();
 
     // Se prepara la consulta SQL con parámetros
-    $query = $conn->prepareStatement("INSERT INTO mantenimientos (nombre, descripcion, fecha, tipo_mantenimiento) VALUES (?, ?, ?, ?)");
-    $query->bind_param("ssss", $nombre, $descripcion, $fecha, $tipo_mantenimiento);
+    $query = $conn->prepareStatement("INSERT INTO mantenimientos (encargado, descripcion, fecha, tipo_mantenimiento) VALUES (?, ?, ?, ?)");
+    $query->bind_param("ssss", $encargado, $descripcion, $fecha, $tipo_mantenimiento);
 
     // Se ejecuta la consulta y se verifica si se ha insertado correctamente
     if ($query->execute()) {

@@ -36,8 +36,6 @@
         exit();
     }
 
-    // Cerrar conexión
-    $conn->close();
 
     // Cerrar conexión
     $conn->closeConnection();
