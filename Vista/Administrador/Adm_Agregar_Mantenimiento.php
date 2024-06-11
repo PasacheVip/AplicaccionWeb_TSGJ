@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Mantenimiento</title>
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Gestion_Mantenimiento.css">
+    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_ForMantenimiento.css">
 </head>
 <body>
     <?php
