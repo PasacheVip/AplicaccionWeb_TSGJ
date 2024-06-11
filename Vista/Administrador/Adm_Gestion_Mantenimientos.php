@@ -43,8 +43,8 @@
         <thead>
             <tr>
                 <th style="text-align: center">ID</th>
-                <th style="text-align: left">Responsable</th>
-                <th style="text-align: left">Descripción</th>
+                <th style="text-align: left">Responsable del Mantenimiento</th>
+                <th style="text-align: left">Descripción del Mantenimiento</th>
                 <th>Fecha</th>
                 <th>Tipo de Mantenimiento</th>
                 <th>Acciones</th>
