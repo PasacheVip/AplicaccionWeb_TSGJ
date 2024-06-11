@@ -116,6 +116,7 @@ form button[type="button"] {
 /* Estilos para el botón de cancelar */
 form button[type="button"] {
     background-color: #ccc;
+    margin: 5px; 
 }
 
 /* Estilos para los botones al pasar el ratón */

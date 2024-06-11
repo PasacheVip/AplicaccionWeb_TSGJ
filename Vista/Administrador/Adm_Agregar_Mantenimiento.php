@@ -56,6 +56,7 @@
         
         <input type="submit" value="Agregar">
         <button type="button" onclick="location.href='index.php'">Cancelar</button>
+        <button type="button" onclick="location.href='index.php'">Regresar</button>
     </form>
 </body>
 </html>
