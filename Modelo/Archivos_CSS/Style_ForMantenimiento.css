@@ -41,8 +41,8 @@
 }
 
 /* Estilos para el cuerpo de la página */
-.Manteni-body {
-    margin: 20px;
+body{
+    margin: 2rem;
 }
 
 /* Estilos para el título de la página */

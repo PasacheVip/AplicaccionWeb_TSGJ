@@ -7,6 +7,7 @@
 
     // Crear una instancia de la clase Conexion_BD
     $conn = new Conexion_BD();
+
 ?>
 
 <!DOCTYPE html>
@@ -52,31 +53,43 @@
         </thead>
         <tbody>
             <?php
-            // Se ejecuta la consulta utilizando el método executeQuery de la clase Conexion_BD
-            $result = $conn->executeQuery("SELECT * FROM Mantenimientos");
 
-            // Se verificar si la consulta devolvió resultados
-            if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td style='text-align: center;'>" . $row['id_mantenimiento'] . "</td>";
-                    echo "<td style='text-align: left;'>" . $row['encargado'] . "</td>";
-                    echo "<td style='text-align: left;'>" . $row['descripcion'] . "</td>";
-                    echo "<td>" . $row['fecha'] . "</td>";
-                    echo "<td>" . $row['tipo_mantenimiento'] . "</td>";
-                    echo "<td><a href='Adm_Editar_Mantenimiento.php?id=" . $row['id_mantenimiento'] . "'><i class='bx bx-edit bx-sm'></i></a>
-                              <a href='MySQL_Borrar_Mantenimiento.php?id=" . $row['id_mantenimiento'] . "'><i class='bx bx-trash bx-sm'></i></a>
-                          </td>";
-                    echo "</tr>";
+                // Preparamos la consulta SQL
+
+                $sql = "SELECT m.*, tm.descripcion AS tipo_mantenimiento FROM mantenimientos m INNER JOIN tipo_mantenimiento tm ON m.tipo_mantenimiento = tm.id";
+
+                // Ejecutamos la consulta SQL
+                $result = $conn->executeQuery($sql);
+
+                // Se verificar si la consulta devolvió resultados
+                if ($result) {
+
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td style='text-align: center;'>" . $row['id_mantenimiento'] . "</td>";
+                        echo "<td style='text-align: left;'>" . $row['encargado'] . "</td>";
+                        echo "<td style='text-align: left;'>" . $row['descripcion'] . "</td>";
+                        echo "<td>" . $row['fecha'] . "</td>";
+                        echo "<td>" . $row['tipo_mantenimiento'] . "</td>";
+                        echo "<td><a href='Adm_Editar_Mantenimiento.php?id=" . $row['id_mantenimiento'] . "'><i class='bx bx-edit bx-sm'></i></a>
+                                <a href='MySQL_Borrar_Mantenimiento.php?id=" . $row['id_mantenimiento'] . "'><i class='bx bx-trash bx-sm'></i></a>
+                            </td>";
+                        echo "</tr>";
+                    }
+
+                } else {
+
+                    echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+
                 }
-            } else {
-                echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
-            }
 
-            // Se cierra la conexión a la base de datos
-            $conn->closeConnection();
+                // Se cierra la conexión a la base de datos
+                $conn->closeConnection();
+
             ?>
+
         </tbody>
     </table>
+
 </body>
 </html>
