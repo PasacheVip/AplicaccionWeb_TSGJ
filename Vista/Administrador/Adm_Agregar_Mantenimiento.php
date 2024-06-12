@@ -34,10 +34,10 @@
     <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
         
         <label for="nombre">Encargado Del Mantenimiento:</label>
-        <input type="text" id="encargado" name="encargado" required>
+        <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this) required>
         
         <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" required>
+        <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this) required>
         
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
