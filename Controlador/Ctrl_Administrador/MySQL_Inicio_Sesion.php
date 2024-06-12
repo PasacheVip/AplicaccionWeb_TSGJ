@@ -28,7 +28,7 @@
         $hash_almacenado = $fila['contrasena']; // Contraseña Encontrada
         $id_cargo_usuario = $fila['id_cargo']; // ID Cargo Encontrado
         $cargo_usuario = $fila['descripcion']; // Cargo Encontrado
-
+        
         // Verificar si la contraseña proporcionada coincide con el hash almacenado
         if (password_verify($contrasena, $hash_almacenado)) {                        
 

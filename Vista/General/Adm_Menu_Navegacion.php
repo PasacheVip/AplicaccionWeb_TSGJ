@@ -1,9 +1,17 @@
 <?php
 
-    // Iniciar la sesión si no está iniciada
     session_start();
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: index.php");
+        exit();
+    }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -115,7 +123,9 @@
         </nav>
 
         <div>
-                <!-- Encabezado del container-->
+            
+        <!-- Encabezado del container-->
+
     <?php
 
         // Verificar si el nombre está establecido en la sesión
