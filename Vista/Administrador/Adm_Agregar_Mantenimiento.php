@@ -28,8 +28,6 @@
 
     ?>
     
-    <h1>Agregar Mantenimiento</h1>
-
     <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
         
         <label for="flotaVehiculo">Vehiculo Mantenimiento:</label>

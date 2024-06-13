@@ -6,7 +6,7 @@
     header("Pragma: no-cache");
 
     if (!isset($_SESSION['usuario'])) {
-        header("Location: index.php");
+        header("Location: ../../Controlador/Utilidades/Sesion_Destroy.php");
         exit();
     }
 
@@ -76,28 +76,28 @@
                         </li>
 
                         <li class="nav-link">
-                            <a href="#pagina1">
+                            <a href="#GestionUsuarios">
                                 <i class='bx bx-user icon'></i>
                                 <span class="text nav-text">Usuarios</span>
                             </a>
                         </li>
                         
                         <li class="nav-link">
-                            <a href="#pagina2">
+                            <a href="#GestionVehicular">
                                 <i class='bx bx-bus icon'></i>
                                 <span class="text nav-text">Flota</span>
                             </a>
                         </li>
 
                         <li class="nav-link">
-                            <a href="#pagina4">
+                            <a href="#GestionMantenimientos">
                                 <i class='bx bxs-wrench icon'></i>
                                 <span class="text nav-text">Mantenimientos</span>
                             </a>
                         </li>
 
                         <li class="nav-link">
-                            <a href="#pagina5">
+                            <a href="#GestionSuministros">
                                 <i class='bx bxs-package icon'></i>
                                 <span class="text nav-text">Suministros</span>
                             </a>
@@ -144,16 +144,7 @@
         
         <?php } else { 
 
-            // Iniciar la sesión si no está iniciada
-            session_start();
-
-            // Eliminar todas las variables de sesión
-            $_SESSION = array();
-
-            // Destruir la sesión
-            session_destroy();
-
-            header('Location: index.php');
+            header('Location: ../../Controlador/Utilidades/Sesion_Destroy.php');
             exit;
             
         } ?>
@@ -163,11 +154,11 @@
 
         <div id="iframe-container">
 
-            <section id="pagina1"><!-- Aqui mostrar la pagina "GESTION DE USUARIOS"-->                
+            <section id="GestionUsuarios"><!-- Aqui mostrar la pagina "GESTION DE USUARIOS"-->                
                 <iframe  src="../Administrador/Adm_Gestion_Usuarios.php"></iframe>
             </section>
 
-            <section id="pagina2"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" -->
+            <section id="GestionVehicular"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" -->
                 <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
             </section>
             
@@ -177,15 +168,13 @@
                 <iframe  src=""></iframe>
             </section> -->
 
-            <section id="pagina4"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->            
+            <section id="GestionMantenimientos"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->            
                 <iframe  src="../Administrador/Adm_Gestion_Mantenimientos.php"></iframe>
             </section>
 
-            <!--
-            <section id="pagina5"><!-- Aqui mostrar la pagina "SUMINISTROS"                
-                <iframe  src=""></iframe>
+            <section id="GestionSuministros"><!-- Aqui mostrar la pagina "SUMINISTROS" -->                
+                <iframe  src="../Administrador/Adm_Gestion_Suministros.php"></iframe>
             </section>
-            -->
 
         </div>    
         

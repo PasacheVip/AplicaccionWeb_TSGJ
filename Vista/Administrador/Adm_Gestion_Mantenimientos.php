@@ -31,7 +31,7 @@
 <body class="Manteni-body">
     <!-- Mostrar el nombre dentro del h2 -->
     <div class="container">
-        <h2>TSGJ | Mantenimientos</h2>    
+        <h2>Tabla Gestion De Mantenimientos</h2>    
     </div>
     
     <!-- Botón para agregar nuevo usuario -->
