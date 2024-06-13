@@ -52,7 +52,7 @@
         
         <input type="submit" value="Agregar">
         <input type="reset" value="Borrar Registros">
-        <button type="button" onclick="location.href='index.php'">Regresar</button>
+        <button type="button" onclick="location.href='Adm_Gestion_Mantenimientos.php'">Regresar</button>
 
     </form>
 

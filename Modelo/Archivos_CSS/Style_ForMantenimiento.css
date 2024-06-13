@@ -110,15 +110,15 @@ form input[type="submit"],form input[type="reset"], form button[type="button"] {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 6px;
 }
 
 /* Estilos para el botón de cancelar */
-form button[type="button"] {
+form input[type="reset"], form button[type="button"] {
     background-color: #ccc;
 }
 
 /* Estilos para los botones al pasar el ratón */
-form input[type="submit"]:hover,
-form button[type="button"]:hover {
+form input[type="submit"]:hover, form input[type="reset"]:hover, form button[type="button"]:hover {
     background-color: #0073aa;
 }
