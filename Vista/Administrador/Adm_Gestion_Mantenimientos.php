@@ -44,6 +44,7 @@
         <thead>
             <tr>
                 <th style="text-align: center">ID</th>
+                <th style="text-align: center">Vehiculo</th>
                 <th style="text-align: left">Responsable del Mantenimiento</th>
                 <th style="text-align: left">Descripción del Mantenimiento</th>
                 <th>Fecha</th>
@@ -56,7 +57,10 @@
 
                 // Preparamos la consulta SQL
 
-                $sql = "SELECT m.*, tm.descripcion AS tipo_mantenimiento FROM mantenimientos m INNER JOIN tipo_mantenimiento tm ON m.tipo_mantenimiento = tm.id";
+                $sql = "SELECT m.*, tm.descripcion AS tipo_mantenimiento, v.placa AS id_vehiculo 
+                FROM mantenimientos m 
+                INNER JOIN tipo_mantenimiento tm ON m.tipo_mantenimiento = tm.id
+                INNER JOIN vehiculos v ON m.id_vehiculo = v.id";
 
                 // Ejecutamos la consulta SQL
                 $result = $conn->executeQuery($sql);
@@ -67,6 +71,7 @@
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id_mantenimiento'] . "</td>";
+                        echo "<td style='text-align: center;'>" . $row['id_vehiculo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['encargado'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['descripcion'] . "</td>";
                         echo "<td>" . $row['fecha'] . "</td>";
