@@ -18,9 +18,13 @@
         // Crear una instancia de la clase "Conexion_BD"
         $conn = new Conexion_BD();
 
-        // Consultar los tipos de combustibles
+        // CONSULTA PARA OBTENER LOS TIPOS DE MANTENIMIENTOS, DE LA BASE DE DATOS
         $sqlTipoMantenimiento = "SELECT * FROM tipo_mantenimiento ORDER BY id";
         $dataTipoMantenimientoSelect = $conn->executeQuery($sqlTipoMantenimiento);
+
+        // CONSULTA PARA OBTENER LOS TIPOS DE MANTENIMIENTOS, DE LA BASE DE DATOS
+        $sqlFlotaVehiculos = "SELECT * FROM vehiculos ORDER BY id";
+        $dataFlotaVehiculosSelect = $conn->executeQuery($sqlFlotaVehiculos);
 
     ?>
     
@@ -28,6 +32,17 @@
 
     <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
         
+        <label for="flotaVehiculo">Vehiculo Mantenimiento:</label>
+        <select id="flotaVehiculo" name="flotaVehiculo">
+            <option value="">Seleccione un Vehiculo</option> <!-- Opción por defecto para seleccionar -->
+            <?php
+                while ($dataSelect = mysqli_fetch_array($dataFlotaVehiculosSelect)) { ?>
+                  <option value="<?php echo $dataSelect["id"]; ?>">
+                    <?php echo utf8_encode($dataSelect["placa"]); ?>
+                  </option>
+              <?php } ?>
+        </select>
+
         <label for="nombre">Encargado Del Mantenimiento:</label>
         <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this)" required>
         

@@ -5,6 +5,7 @@
     // Verifica si la solicitud es de tipo POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Se obtienen los datos del formulario
+        $vehiculo = $_POST['flotaVehiculo'];
         $encargado = $_POST['encargado'];
         $descripcion = $_POST['descripcion'];
         $fecha = $_POST['fecha'];
@@ -19,13 +20,13 @@
         $conn = new Conexion_BD();
 
         // Construimos la consulta SQL
-        $sql = ("INSERT INTO mantenimientos (encargado, descripcion, fecha, tipo_mantenimiento) VALUES (?, ?, ?, ?)");
+        $sql = ("INSERT INTO mantenimientos (id_vehiculo, encargado, descripcion, fecha, tipo_mantenimiento) VALUES (?,?, ?, ?, ?)");
 
         // Preparamos la consulta    
         $stmt = $conn->prepareStatement($sql);
 
         // Vincular parámetros y ejecutar la consulta
-        $stmt->bind_param("ssss", $encargado, $descripcion, $fecha, $tipo_mantenimiento);
+        $stmt->bind_param("issss", $vehiculo, $encargado, $descripcion, $fecha, $tipo_mantenimiento);
         $stmt->execute();
 
         // Se ejecuta la consulta y se verifica si se ha insertado correctamente
