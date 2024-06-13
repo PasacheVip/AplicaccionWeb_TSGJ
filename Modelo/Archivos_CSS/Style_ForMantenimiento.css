@@ -101,8 +101,7 @@ form select {
 }
 
 /* Estilos para el botón de envío */
-form input[type="submit"],
-form button[type="button"] {
+form input[type="submit"],form input[type="reset"], form button[type="button"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -116,7 +115,6 @@ form button[type="button"] {
 /* Estilos para el botón de cancelar */
 form button[type="button"] {
     background-color: #ccc;
-    margin: 5px; 
 }
 
 /* Estilos para los botones al pasar el ratón */

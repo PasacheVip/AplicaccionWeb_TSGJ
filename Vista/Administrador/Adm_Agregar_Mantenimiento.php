@@ -51,7 +51,7 @@
     </select>
         
         <input type="submit" value="Agregar">
-        <button type="button" onclick="location.href='index.php'">Cancelar</button>
+        <input type="reset" value="Borrar Registros">
         <button type="button" onclick="location.href='index.php'">Regresar</button>
 
     </form>
