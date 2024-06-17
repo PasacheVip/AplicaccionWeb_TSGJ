@@ -95,7 +95,7 @@
 
                 } else {
 
-                    echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+                    echo "<tr><td colspan='6'>¡Actualmente no cuentas con ningun Suministro!</td></tr>";
 
                 }
 
