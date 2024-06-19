@@ -10,7 +10,7 @@
     if (isset($_SESSION['idSuministro'])) {
 
         // Almacenar los datos de PLACA en el array "response"
-        $response['idSuministro'] = $_SESSION['idSuministro'];
+        $response['Suministro'] = $_SESSION['idSuministro'];
 
     } else {
         

@@ -8,14 +8,14 @@
 
         success: function(response) {
             
-            if (response.hasOwnProperty('idSuministro')) {
+            if (response.hasOwnProperty('Suministro')) {
                 
                 // Acceder a los datos recibidos
-                var idSuministro = response.idSuministro; //Accede al dato recibido ("PLACA VEHICULO")
+                var SuministroID = response.Suministro; //Accede al dato recibido ("PLACA VEHICULO")
                 
                 // Mostrar los datos en una alerta
                 Swal.fire({
-                    title: 'El Producto: ' + idSuministro ,
+                    title: 'El Producto: ' + SuministroID ,
                     text: '¡Eliminado Correctamente!',
                     icon: 'success',
                     showConfirmButton: false,
@@ -23,7 +23,7 @@
                 });
 
                 // Mostrar los datos en la consola para verificar
-                console.log("El prodcuto: "+ idSuministro +" Eliminado Correctamente");               
+                console.log("El prodcuto: "+ SuministroID +" Eliminado Correctamente");               
                 
                 // Realizar una nueva solicitud AJAX para ELIMINAR LA SESSION ID
                 $.ajax({
