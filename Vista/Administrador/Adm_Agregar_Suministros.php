@@ -47,7 +47,7 @@
         </select>
 
         <!-- TIPO DE CATEGORIA -->
-        <label for="tipo_presentacion">Tipo de Presentacion:</label>
+        <label for="tipo_presentacion">Unidad de Medida:</label>
         <select id="tipo_presentacion" name="tipo_presentacion">
             <option value="">Seleccione un Vehiculo</option> <!-- Opción por defecto para seleccionar -->
             <?php
@@ -79,16 +79,12 @@
         <input type="text" id="nombre_producto" name="nombre_producto" onkeyup="convertirAMayusculas(this)" required> 
         
         <!-- PRECIO PRODUCTO -->
-        <label for="precio_producto">Precio S/ del Producto:</label>
+        <label for="precio_producto">Precio en S/ del Producto:</label>
         <input type="num" id="precio_producto" name="precio_producto">
 
         <!-- STOCK PRODUCTO -->
         <label for="stock_producto">Cantidad del Producto:</label>
         <input type="num" id="stock_producto" name="stock_producto">
-
-        <!-- PESO PRODUCTO -->
-        <label for="peso_producto">Peso del Producto:</label>
-        <input type="num" id="peso_producto" name="peso_producto">
         
         <!-- BOTONES -->
         <input type="submit" value="Agregar">
@@ -102,11 +98,3 @@
 
 </body>
 </html>
-
-<?php
-    // Cerrar la conexión a la base de datos
-    if ($conn) {
-        // Cerrar conexión
-        $conn->closeConnection();
-    }
-?>

@@ -72,11 +72,3 @@
 
 </body>
 </html>
-
-<?php
-    // Cerrar la conexión a la base de datos
-    if ($conn) {
-        // Cerrar conexión
-        $conn->closeConnection();
-    }
-?>

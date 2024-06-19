@@ -33,7 +33,7 @@ if (isset($_SESSION['usuario'])) {
 
             // La eliminación fue exitosa
             $_SESSION['idSuministro'] = $idSuministro;
-            header("Location: ../../Vista/Administrador/Adm_Gestion_Mantenimientos.php");            
+            header("Location: ../../Vista/Administrador/Adm_Gestion_Suministros.php");            
             
         } else {
 

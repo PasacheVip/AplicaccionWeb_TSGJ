@@ -45,13 +45,12 @@
             <tr>
                 <th style="text-align: center">ID</th>
                 <th style="text-align: left">Categoria</th>
-                <th style="text-align: left">Presentacion</th>
+                <th style="text-align: left">Unidad de Medida</th>
                 <th style="text-align: left">Proveedor</th>
                 <th style="text-align: center">Codigo_Producto</th>
                 <th style="text-align: left">Nombre Del Producto</th>
-                <th style="text-align: center">Precio S/</th>
-                <th style="text-align: Center">Stock</th>
-                <th style="text-align: Center">Peso</th>
+                <th style="text-align: right">Precio S/</th>
+                <th style="text-align: Center">Stock Disponible</th>
                 <th style="text-align: Center">Acciones</th>
             </tr>
         </thead>
@@ -81,11 +80,10 @@
                         echo "<td style='text-align: left;'>" . $row['id_categoria'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_presentacion'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_proveedor'] . "</td>";
-                        echo "<td style='text-align: center;'> 000" . $row['codigo'] . "</td>";
+                        echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
-                        echo "<td style='text-align: center;'> S/ " . $row['precio'] . ".00 </td>";
+                        echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00 </td>";
                         echo "<td style='text-align: center;'>" . $row['stock_disponible'] . "</td>";
-                        echo "<td style='text-align: center;'>" . $row['peso'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
@@ -98,9 +96,6 @@
                     echo "<tr><td colspan='6'>¡Actualmente no cuentas con ningun Suministro!</td></tr>";
 
                 }
-
-                // Se cierra la conexión a la base de datos
-                $conn->closeConnection();
 
             ?>
 
