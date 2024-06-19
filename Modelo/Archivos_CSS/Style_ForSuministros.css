@@ -1,0 +1,53 @@
+/* Estilos para los formularios */
+form {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Estilos para las etiquetas de los campos */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de texto */
+form input[type="text"],
+form input[type="num"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de envío */
+form input[type="submit"],form input[type="reset"], form button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #009adf;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+/* Estilos para el botón de cancelar */
+form input[type="reset"], form button[type="button"] {
+    background-color: #ccc;
+}
+
+/* Estilos para los botones al pasar el ratón */
+form input[type="submit"]:hover, form input[type="reset"]:hover, form button[type="button"]:hover {
+    background-color: #0073aa;
+}

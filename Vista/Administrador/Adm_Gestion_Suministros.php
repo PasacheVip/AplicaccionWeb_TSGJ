@@ -47,9 +47,9 @@
                 <th style="text-align: left">Categoria</th>
                 <th style="text-align: left">Presentacion</th>
                 <th style="text-align: left">Proveedor</th>
-                <th style="text-align: center">Codigo</th>
-                <th style="text-align: left">Producto</th>
-                <th style="text-align: center">Precio</th>
+                <th style="text-align: center">Codigo_Producto</th>
+                <th style="text-align: left">Nombre Del Producto</th>
+                <th style="text-align: center">Precio S/</th>
                 <th style="text-align: Center">Stock</th>
                 <th style="text-align: Center">Peso</th>
                 <th style="text-align: Center">Acciones</th>
@@ -81,14 +81,14 @@
                         echo "<td style='text-align: left;'>" . $row['id_categoria'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_presentacion'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_proveedor'] . "</td>";
-                        echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
+                        echo "<td style='text-align: center;'> 000" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
-                        echo "<td style='text-align: center;'>" . $row['precio'] . "</td>";
+                        echo "<td style='text-align: center;'> S/ " . $row['precio'] . ".00 </td>";
                         echo "<td style='text-align: center;'>" . $row['stock_disponible'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['peso'] . "</td>";
                         echo "<td>
-                                <a href='Adm_Editar_Mantenimiento?IDM=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
-                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Mantenimiento.php?IDM=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
+                                <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
+                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
                              </td>";
                         echo "</tr>";
                     }
@@ -106,6 +106,15 @@
 
         </tbody>
     </table>
+
+    <!--===== ARCHIVO JS - NOTIFIFACION DE AGREGAR VEHICULO ===== 
+    <script src="../../Modelo/Archivos_JS/Notifi_Agregar_Vehiculo.js"></script>
+
+    ===== ARCHIVO JS - NOTIFIFACION DE EDITAR VEHICULO ===== 
+    <script src="../../Modelo/Archivos_JS/Notifi_Editar_Vehiculo.js"></script>-->
+    
+    <!--===== ARCHIVO JS - NOTIFIFACION DE ELIMINAR SUMINISTRO ===== -->
+    <script src="../../Modelo/Archivos_JS/Notifi_Eliminar_Suministro.js"></script>
 
 </body>
 </html>

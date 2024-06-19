@@ -60,8 +60,6 @@
                   </option>
               <?php } ?>
         </select>
-
-    </select>
         
         <input type="submit" value="Agregar">
         <input type="reset" value="Borrar Registros">
