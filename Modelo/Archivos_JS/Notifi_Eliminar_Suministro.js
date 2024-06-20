@@ -1,9 +1,8 @@
-     
     // Realizar una solicitud AJAX para obtener los valores de sesión
     $.ajax({
 
         type: "GET",
-        url: "../../Controlador/Utilidades/Notifi_Eliminar_Suministro.php",
+        url: "../../Controlador/Utilidades/Notificaciones/Notifi_Eliminar_Suministro.php",
         dataType: "json",
 
         success: function(response) {
