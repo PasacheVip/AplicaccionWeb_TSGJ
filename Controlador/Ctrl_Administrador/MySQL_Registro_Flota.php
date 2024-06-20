@@ -26,7 +26,6 @@
         
         // Agregacion Vehiculo Exitoso
         $_SESSION['vehiculoPlaca'] = $placa;
-
         header("Location: ../../Vista/Administrador/Adm_Gestion_Vehicular.php");
         exit();   
 

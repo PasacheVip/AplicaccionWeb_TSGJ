@@ -2,7 +2,7 @@
     $.ajax({
 
         type: "GET",
-        url: "../../Controlador/Utilidades/Notificaciones/Notifi_Eliminar_Suministro.php",
+        url: "../../Controlador/Utilidades/Notificaciones/Suministro/Notifi_Eliminar_Suministro.php",
         dataType: "json",
 
         success: function(response) {
@@ -28,7 +28,7 @@
                 $.ajax({
 
                     type: "GET",
-                    url: "../../Controlador/Utilidades/POST_Eliminar_SuministroID.php",
+                    url: "../../Controlador/Utilidades/Suministro/POST_Eliminar_SuministroID.php",
                     dataType: "json", // Especificar que esperas una respuesta JSON
                 
                     success: function(response) {

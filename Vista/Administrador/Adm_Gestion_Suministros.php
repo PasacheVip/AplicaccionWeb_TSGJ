@@ -56,7 +56,7 @@
                 <th style="text-align: center">Codigo_Producto</th>
                 <th style="text-align: left">Nombre Del Producto</th>
                 <th style="text-align: right">Precio Referencial</th>
-                <th style="text-align: Center">Stock Disponible</th>
+                <th style="text-align: right">Stock Disponible</th>
                 <th style="text-align: Center">Acciones</th>
             </tr>
         </thead>
@@ -89,7 +89,7 @@
                         echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
                         echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00  <a href='../../Modelo/Archivos_JS/'><i class='bx bxs-badge-dollar'></i></a></td>";
-                        echo "<td style='text-align: center;'>" . $row['stock_disponible'] . "</td>";
+                        echo "<td style='text-align: right;'>" . $row['stock_disponible'] . " " . $row['id_presentacion'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
@@ -108,14 +108,14 @@
         </tbody>
     </table>
 
-    <!--===== ARCHIVO JS - NOTIFIFACION DE AGREGAR VEHICULO ===== 
-    <script src="../../Modelo/Archivos_JS/Notifi_Agregar_Vehiculo.js"></script>
+    <!-- ==== ARCHIVO JS - NOTIFIFACION DE AGREGAR SUMINISTRO ===== -->
+    <script src="../../Modelo/Archivos_JS/Notificaciones/Suministros/Notifi_Agregar_Suministro.js"></script>
 
-    ===== ARCHIVO JS - NOTIFIFACION DE EDITAR VEHICULO ===== 
+    <!-- ===== ARCHIVO JS - NOTIFIFACION DE EDITAR VEHICULO ===== 
     <script src="../../Modelo/Archivos_JS/Notifi_Editar_Vehiculo.js"></script>-->
     
     <!--===== ARCHIVO JS - NOTIFIFACION DE ELIMINAR SUMINISTRO ===== -->
-    <script src="../../Modelo/Archivos_JS/Notifi_Eliminar_Suministro.js"></script>
+    <script src="../../Modelo/Archivos_JS/Notificaciones/Suministros/Notifi_Eliminar_Suministro.js"></script>
 
 </body>
 </html>

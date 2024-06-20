@@ -1,9 +1,10 @@
 <?php
+    // Iniciar la sesión obligatoriamente
+    session_start();
+    
     // Se incluye el archivo de conexión a la base de datos
     require_once "../../Controlador/Utilidades/Conexion_BD.php";
 
-    // Verifica si la solicitud es de tipo POST
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Se obtienen los datos del formulario
         $id_categoria = $_POST['tipo_Categoria'];
         $id_presentacion = $_POST['tipo_presentacion'];
@@ -29,8 +30,8 @@
 
         // Se ejecuta la consulta y se verifica si se ha insertado correctamente
         if ($stmt->affected_rows > 0) {
-            // Se muestra un mensaje de éxito y se redirige a una página de gestión de mantenimientos
-            echo "Suministro Registrado Correctamente.";
+            
+            $_SESSION['productoNombre'] = $producto;
             header("Location: ../../Vista/Administrador/Adm_Gestion_Suministros.php");
 
         } else {
@@ -40,5 +41,5 @@
 
         // Se cierra la conexión a la base de datos
         $conn->closeConnection();
-    }
+    
 ?>
