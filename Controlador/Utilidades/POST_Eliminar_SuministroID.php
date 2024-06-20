@@ -18,7 +18,7 @@
     }else{
 
         // Respuesta simple para indicar que la sesión nose eliminó correctamente
-        $response['error'] = "¡La Sesión [datoplacavehiculo] nose Logro Eliminar Correctamente!";
+        $response['error'] = "¡La Sesión [idSuministro] nose Logro Eliminar Correctamente!";
 
     }
 

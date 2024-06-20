@@ -20,6 +20,12 @@
     <!-- Icono de Pagina -->
     <link rel="icon" href="../../Modelo/Archivos_Media/Color_LogoTipo.png" type="image/png">
 
+    <!-- USO DE ALERTAS PERZONALISADAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+
+    <!-- ==== jQuery (Para Solicitudes Ajax)===== -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- ==== BOX-ICONS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -49,7 +55,7 @@
                 <th style="text-align: left">Proveedor</th>
                 <th style="text-align: center">Codigo_Producto</th>
                 <th style="text-align: left">Nombre Del Producto</th>
-                <th style="text-align: right">Precio S/</th>
+                <th style="text-align: right">Precio Referencial</th>
                 <th style="text-align: Center">Stock Disponible</th>
                 <th style="text-align: Center">Acciones</th>
             </tr>
@@ -82,7 +88,7 @@
                         echo "<td style='text-align: left;'>" . $row['id_proveedor'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
-                        echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00 </td>";
+                        echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00  <a href='../../Modelo/Archivos_JS/'><i class='bx bxs-badge-dollar'></i></a></td>";
                         echo "<td style='text-align: center;'>" . $row['stock_disponible'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
