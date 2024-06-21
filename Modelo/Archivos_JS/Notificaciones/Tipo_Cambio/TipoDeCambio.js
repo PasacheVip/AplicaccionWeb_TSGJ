@@ -15,7 +15,7 @@
                 // Mostrar los datos en una alerta
                 Swal.fire({
                     icon: "success",
-                    title: "Tipo de Cambio en $ " + TipoDeCambio,
+                    title: "$ " + TipoDeCambio,
                     showConfirmButton: false,
                     timer: 1500
                 });

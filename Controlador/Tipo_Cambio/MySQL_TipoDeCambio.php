@@ -14,7 +14,7 @@
 
             // Obtener el VALOR (PRECIO) de la URL
             $valor = $_GET['valor'];
-            $TipoDeCambioActual = 3.63;
+            $TipoDeCambioActual = 3.63; //Manejar este valor de acuerdo al resultado de la API
             $MostrarTipoDeCambio = $valor / $TipoDeCambioActual;
 
             $_SESSION['IdTipoDeCambio'] = $MostrarTipoDeCambio;
