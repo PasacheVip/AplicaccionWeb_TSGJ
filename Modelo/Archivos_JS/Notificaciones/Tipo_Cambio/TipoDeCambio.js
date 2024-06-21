@@ -14,9 +14,10 @@
                 
                 // Mostrar los datos en una alerta
                 Swal.fire({
-                    title: "Good job!",
-                    text: "Tipo de Cambio en $ " + TipoDeCambio + "",
-                    icon: "success"
+                    icon: "success",
+                    title: "Tipo de Cambio en $ " + TipoDeCambio,
+                    showConfirmButton: false,
+                    timer: 1500
                 });
 
                 // Mostrar los datos en la consola para verificar

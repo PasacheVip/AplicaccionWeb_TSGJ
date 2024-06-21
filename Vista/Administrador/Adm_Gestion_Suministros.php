@@ -81,6 +81,13 @@
                 if ($result) {
 
                     while ($row = $result->fetch_assoc()) {
+
+                        if ($row['stock_disponible']>1){
+                            $MostarUnidad = $row['id_presentacion'] . "ES";
+                        }else{
+                            $MostarUnidad = $row['id_presentacion'];
+                        }
+
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id_producto'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_categoria'] . "</td>";
@@ -89,7 +96,7 @@
                         echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
                         echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00  <a href='../../Controlador/Tipo_Cambio/MySQL_TipoDeCambio.php?valor=". $row['precio'] ."'><i class='bx bxs-badge-dollar'></i></a></td>";
-                        echo "<td style='text-align: right;'>" . $row['stock_disponible'] . " " . $row['id_presentacion'] . "</td>";
+                        echo "<td style='text-align: right;'>" . $row['stock_disponible'] . " " . $MostarUnidad. "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
