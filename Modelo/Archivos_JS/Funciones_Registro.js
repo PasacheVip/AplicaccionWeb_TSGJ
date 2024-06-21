@@ -1,7 +1,4 @@
 
-
-
-
 /* Funcion para convertir lo ingreso por el usario, automaticamente a mayuscula de un INPUT TYPE "TEXT"
  * - <input type="text" onkeyup="convertirAMayusculas(this)"> Sintaxis HTML */
 

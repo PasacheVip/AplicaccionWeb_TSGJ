@@ -14,8 +14,10 @@
                 
                 // Mostrar los datos en una alerta
                 Swal.fire({
-                    icon: "success",
-                    title: "$ " + TipoDeCambio,
+                    width: '14rem',
+                    position: 'center',
+                    title: '$ ' + TipoDeCambio,
+                    text: 'Precio en Dolares',
                     showConfirmButton: false,
                     timer: 1500
                 });
