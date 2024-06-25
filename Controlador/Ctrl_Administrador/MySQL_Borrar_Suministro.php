@@ -19,7 +19,7 @@ if (isset($_SESSION['usuario'])) {
         $conn = new Conexion_BD();
 
         // Construir la consulta SQL para eliminar el Mantenimiento Registrado
-        $sql = "DELETE FROM producto WHERE id_producto = ?";
+        $sql = "DELETE FROM producto WHERE codigo = ?";
 
         // Preparar la consulta
         $stmt = $conn->prepareStatement($sql);
