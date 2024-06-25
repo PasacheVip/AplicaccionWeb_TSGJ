@@ -34,6 +34,7 @@
     
     <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
         
+        <!-- ===== SELECCIONAR VEHICULO ===== -->
         <label for="flotaVehiculo">Vehiculo Mantenimiento:</label>
         <select id="flotaVehiculo" name="flotaVehiculo">
             <option value="">Seleccione un Vehiculo</option> <!-- Opción por defecto para seleccionar -->
@@ -44,13 +45,16 @@
                   </option>
               <?php } ?>
         </select>
-
+        
+        <!-- ===== ENCARGADO DEL MANTENIMIENTO ===== -->
         <label for="nombre">Encargado Del Mantenimiento:</label>
         <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this)" required>
         
+        <!-- ===== DESCRIPCION DEL MANTENIMIENTO ===== -->
         <label for="descripcion">Descripción Del Mantenimiento</label>
         <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this)" required>
         
+        <!-- ===== SELECCIONAR PRODUCTOS ===== -->
         <label for="produtos">Productos a Utilizar:</label>
         <select id="produtos" name="produtos">
             <option value="">Seleccione un Prodcuto</option> <!-- Opción por defecto para seleccionar -->
@@ -61,10 +65,16 @@
                   </option>
               <?php } ?>
         </select>
-
+        
+        <!-- ===== PRODUCTOS SELECCIONADOS ===== -->
+        <label for="productoSeleccionados">Productos Seleccionados:</label>
+        <!-- AQUI MONSTRAR LOS PRODUCTOS SELECCIONADOS, LISTOS PARA AGREGAR A LA BASE DE DATOS -->
+    
+        <!-- ===== FECHA DEL MANTIMIENTO ===== -->
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
         
+        <!-- ===== TIPO DE MANTEMINIENTO ===== -->
         <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
         <select id="tipo_mantenimiento" name="tipo_mantenimiento">
             <option value="">Seleccione un tipo</option> <!-- Opción por defecto para seleccionar -->
@@ -76,13 +86,14 @@
               <?php } ?>
         </select>
         
+        <!-- ===== BOTONES ===== -->
         <input type="submit" value="Agregar">
         <input type="reset" value="Borrar Registros">
         <button type="button" onclick="location.href='Adm_Gestion_Mantenimientos.php'">Regresar</button>
 
     </form>
 
-    <!--===== ARCHIVO JS - VALIDACION DE ESCRIBIR =====-->
+    <!-- ===== ARCHIVO JS - VALIDACION DE ESCRIBIR ===== -->
     <script src="../../Modelo/Archivos_JS/Validacion_Escribir.js"></script>
 
 </body>
