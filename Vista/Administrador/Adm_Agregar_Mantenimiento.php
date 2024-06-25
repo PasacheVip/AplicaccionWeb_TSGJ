@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSGJ - Agregar Mantenimientos</title>
 
+    <!-- Icono de Pagina -->
+    <link rel="icon" href="../../Modelo/Archivos_Media/Color_LogoTipo.png" type="image/png">
+
+    <!-- USO DE ALERTAS PERZONALISADAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_ForMantenimiento.css">
 
@@ -57,7 +63,7 @@
         <!-- ===== SELECCIONAR PRODUCTOS ===== -->
         <label for="produtos">Productos a Utilizar:</label>
         <select id="produtos" name="produtos">
-            <option value="">Seleccione un Prodcuto</option> <!-- Opción por defecto para seleccionar -->
+            <option value="">Seleccione un Producto</option> <!-- Opción por defecto para seleccionar -->
             <?php
                 while ($dataSelect = mysqli_fetch_array($dataProductoSelect)) { ?>
                   <option value="<?php echo $dataSelect["id_producto"]; ?>">
@@ -65,10 +71,17 @@
                   </option>
               <?php } ?>
         </select>
+
+        <button type="button" onclick="agregarProducto()" style="margin-top: 2px;">Agregar Producto</button>
         
         <!-- ===== PRODUCTOS SELECCIONADOS ===== -->
-        <label for="productoSeleccionados">Productos Seleccionados:</label>
-        <!-- AQUI MONSTRAR LOS PRODUCTOS SELECCIONADOS, LISTOS PARA AGREGAR A LA BASE DE DATOS -->
+        <label style="margin-top: 20px;" for="productosSeleccionados">Productos Seleccionados:</label>
+        <ul id="productosSeleccionados">
+            <!-- Aquí se mostrarán los productos seleccionados -->
+        </ul>
+
+        <!-- Campos ocultos para enviar productos seleccionados al servidor -->
+        <div id="productosSeleccionadosInputs"></div>
     
         <!-- ===== FECHA DEL MANTIMIENTO ===== -->
         <label for="fecha">Fecha:</label>
@@ -85,7 +98,7 @@
                   </option>
               <?php } ?>
         </select>
-        
+            
         <!-- ===== BOTONES ===== -->
         <input type="submit" value="Agregar">
         <input type="reset" value="Borrar Registros">
@@ -95,6 +108,9 @@
 
     <!-- ===== ARCHIVO JS - VALIDACION DE ESCRIBIR ===== -->
     <script src="../../Modelo/Archivos_JS/Validacion_Escribir.js"></script>
+
+    <!-- ===== ARCHIVO JS - MANEJO DE PRODUCTOS SELECCIONADOS ===== -->
+    <script src="../../Modelo/Archivos_JS/ProductoSelect/SelectProducto.js"></script>
 
 </body>
 </html>
