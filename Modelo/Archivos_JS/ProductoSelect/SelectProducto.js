@@ -30,6 +30,7 @@ function agregarProducto() {
         // Crear un botón para eliminar el producto seleccionado
         var removeButton = document.createElement("button");
         removeButton.textContent = "Eliminar";
+        removeButton.className = "remove-button";
         removeButton.onclick = function() {
             li.remove();
             actualizarProductosSeleccionados();
