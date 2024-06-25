@@ -26,6 +26,10 @@
         $sqlFlotaVehiculos = "SELECT * FROM vehiculos ORDER BY id";
         $dataFlotaVehiculosSelect = $conn->executeQuery($sqlFlotaVehiculos);
 
+        // CONSULTA PARA OBTENER LOS TIPOS DE MANTENIMIENTOS, DE LA BASE DE DATOS
+        $sqlProducto = "SELECT * FROM producto ORDER BY id_producto";
+        $dataProductoSelect = $conn->executeQuery($sqlProducto);
+
     ?>
     
     <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
@@ -44,9 +48,20 @@
         <label for="nombre">Encargado Del Mantenimiento:</label>
         <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this)" required>
         
-        <label for="descripcion">Descripción:</label>
+        <label for="descripcion">Descripción Del Mantenimiento</label>
         <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this)" required>
         
+        <label for="produtos">Productos a Utilizar:</label>
+        <select id="produtos" name="produtos">
+            <option value="">Seleccione un Prodcuto</option> <!-- Opción por defecto para seleccionar -->
+            <?php
+                while ($dataSelect = mysqli_fetch_array($dataProductoSelect)) { ?>
+                  <option value="<?php echo $dataSelect["id_producto"]; ?>">
+                    <?php echo utf8_encode($dataSelect["producto"]); ?>
+                  </option>
+              <?php } ?>
+        </select>
+
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
         
