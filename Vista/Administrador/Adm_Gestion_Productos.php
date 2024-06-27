@@ -116,7 +116,10 @@
 
                 // Preparamos la consulta SQL
 
-                $sql = "SELECT * FROM requerimientos WHERE id_mantenimiento = ?";
+                $sql = "SELECT r.*,  p.id_producto AS productos
+                FROM requerimientos r
+                INNER JOIN producto p ON r.id_producto = p.id
+                WHERE id_mantenimiento = ?";
 
                 // Preparar la consulta
                 $stmt = $conn->prepareStatement($sql);
@@ -134,7 +137,7 @@
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id'] . "</td>";
-                        echo "<td style='text-align: center;'>" . $row['id_producto'] . "</td>";
+                        echo "<td style='text-align: center;'>" . $row['productos'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['cantidad'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?IDP=" . $row['id'] . "'><i class='bx bx-edit bx-sm'></i></a>
