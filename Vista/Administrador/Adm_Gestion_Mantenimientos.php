@@ -72,7 +72,7 @@
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id_mantenimiento'] . "</td>";
-                        echo "<td style='text-align: center;'><a href='Adm_Gestion_Productos' style:'text-decoration: none;'>Visualizar</a></td>";
+                        echo "<td style='text-align: center;'><a href='Adm_Gestion_Productos.php?IDP=" . $row['id_mantenimiento'] . "' style:'text-decoration: none;'>Visualizar</a></td>";
                         echo "<td style='text-align: center;'>" . $row['id_vehiculo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['encargado'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['descripcion'] . "</td>";
