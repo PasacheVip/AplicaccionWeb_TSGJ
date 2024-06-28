@@ -72,19 +72,19 @@
 
         <!-- CODIGO PRODUCTO -->
         <label for="codigo_producto">Codigo del Producto:</label>
-        <input type="num" id="codigo_producto" name="codigo_producto">
+        <input type="num" id="codigo_producto" name="codigo_producto" onkeyup="limitarDigitos(this, 10)">
         
         <!-- NOMBRE PRODUCTO -->
         <label for="nombre_producto">Descripción:</label>
-        <input type="text" id="nombre_producto" name="nombre_producto" onkeyup="convertirAMayusculas(this)" required> 
+        <input type="text" id="nombre_producto" name="nombre_producto" onkeyup="convertirAMayusculas(this)"> 
         
         <!-- PRECIO PRODUCTO -->
         <label for="precio_producto">Precio en S/ del Producto:</label>
-        <input type="num" id="precio_producto" name="precio_producto">
+        <input type="num" id="precio_producto" name="precio_producto" onkeyup="limitarDigitos(this, 10)">
 
         <!-- STOCK PRODUCTO -->
         <label for="stock_producto">Cantidad del Producto:</label>
-        <input type="num" id="stock_producto" name="stock_producto">
+        <input type="num" id="stock_producto" name="stock_producto" onkeyup="limitarDigitos(this, 10)">
         
         <!-- BOTONES -->
         <input type="submit" value="Agregar">

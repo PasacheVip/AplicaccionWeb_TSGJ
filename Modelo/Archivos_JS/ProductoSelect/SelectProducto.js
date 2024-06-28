@@ -1,4 +1,3 @@
-
 function agregarProducto() {
     var select = document.getElementById("produtos");
     var selectedOption = select.options[select.selectedIndex];
@@ -24,8 +23,19 @@ function agregarProducto() {
 
         // Crear un nuevo elemento de lista con el producto seleccionado
         var li = document.createElement("li");
-        li.textContent = selectedOption.text;
+        li.textContent = selectedOption.text + " - ";
+
+        // Crear un campo de entrada numérico para la cantidad
+        var cantidadInput = document.createElement("input");
+        cantidadInput.type = "number";
+        cantidadInput.name = "cantidadesSeleccionadas[]";
+        cantidadInput.min = 1;
+        cantidadInput.value = 1; // Valor por defecto
+        cantidadInput.style.width = "40px";
+        cantidadInput.style.marginRight = "10px"; // Espacio entre cantidad y botón eliminar
+        
         li.dataset.id = selectedOption.value;
+        li.appendChild(cantidadInput);
 
         // Crear un botón para eliminar el producto seleccionado
         var removeButton = document.createElement("button");
@@ -53,5 +63,12 @@ function actualizarProductosSeleccionados() {
         input.name = "productosSeleccionados[]";
         input.value = items[i].dataset.id;
         selectedInputs.appendChild(input);
+
+        // Añadir el campo oculto para la cantidad
+        var cantidadInput = document.createElement("input");
+        cantidadInput.type = "hidden";
+        cantidadInput.name = "cantidadesSeleccionadas[]";
+        cantidadInput.value = items[i].querySelector('input[type="number"]').value;
+        selectedInputs.appendChild(cantidadInput);
     }
 }

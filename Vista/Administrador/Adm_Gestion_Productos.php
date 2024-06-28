@@ -108,7 +108,6 @@
                 <th style="text-align: center">ID</th>
                 <th style="text-align: left">Productos</th>
                 <th style="text-align: center">Cantidad</th>
-                <th style="text-align: center">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -139,10 +138,6 @@
                         echo "<td style='text-align: center;'>" . $row['id'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['productos'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['cantidad'] . "</td>";
-                        echo "<td>
-                                <a href='Adm_Editar_Mantenimiento?IDP=" . $row['id'] . "'><i class='bx bx-edit bx-sm'></i></a>
-                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Mantenimiento.php?IDP=" . $row['id'] . "'><i class='bx bx-trash bx-sm'></i></a>
-                             </td>";
                         echo "</tr>";
                     }
 
