@@ -18,13 +18,15 @@ if (isset($_SESSION['usuario'])) {
         // Crear una instancia de la clase Database
         $conn = new Conexion_BD();
 
-        // Construir la consulta SQL para eliminar el Mantenimiento Registrado
-        $sql = "DELETE FROM producto WHERE codigo = ?";
-
-        // Preparar la consulta
+        // Construir la consulta SQL para eliminar en Primera instancia los producto de la tabla requerimientos.
+        $sql = "DELETE FROM requerimientos WHERE id_producto = ?";
         $stmt = $conn->prepareStatement($sql);
+        $stmt->bind_param("i", $idSuministro);
+        $stmt->execute();
 
-        // Vincular parámetros y ejecutar la consulta
+        // Construir la consulta SQL para eliminar en Segunda instancia el Suministro.
+        $sql = "DELETE FROM producto WHERE id_producto = ?";
+        $stmt = $conn->prepareStatement($sql);
         $stmt->bind_param("i", $idSuministro);
         $stmt->execute();
 

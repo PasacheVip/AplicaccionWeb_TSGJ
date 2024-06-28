@@ -93,7 +93,7 @@
                         echo "<td style='text-align: right;'>" . $row['stock_disponible'] . " " . $row['id_presentacion'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
-                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['codigo'] . "'><i class='bx bx-trash bx-sm'></i></a>
+                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
                              </td>";
                         echo "</tr>";
                     }

@@ -106,7 +106,7 @@
         <thead>
             <tr>
                 <th style="text-align: center">ID</th>
-                <th style="text-align: center">Productos</th>
+                <th style="text-align: left">Productos</th>
                 <th style="text-align: center">Cantidad</th>
                 <th style="text-align: center">Acciones</th>
             </tr>
@@ -116,9 +116,9 @@
 
                 // Preparamos la consulta SQL
 
-                $sql = "SELECT r.*,  p.id_producto AS productos
+                $sql = "SELECT r.*,  p.producto AS productos
                 FROM requerimientos r
-                INNER JOIN producto p ON r.id_producto = p.id
+                INNER JOIN producto p ON r.id_producto = p.id_producto
                 WHERE id_mantenimiento = ?";
 
                 // Preparar la consulta
@@ -137,7 +137,7 @@
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id'] . "</td>";
-                        echo "<td style='text-align: center;'>" . $row['productos'] . "</td>";
+                        echo "<td style='text-align: left;'>" . $row['productos'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['cantidad'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?IDP=" . $row['id'] . "'><i class='bx bx-edit bx-sm'></i></a>
