@@ -1,9 +1,17 @@
 <?php
 
-    // Iniciar la sesión si no está iniciada
     session_start();
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: ../../Controlador/Utilidades/Sesion_Destroy.php");
+        exit();
+    }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -17,14 +25,10 @@
         <link rel="icon" type="image/png" href="../../Modelo/Archivos_Media/Color_LogoTipo.png">
 
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Menu_Navegacion.css">
-        <link rel="stylesheet" href="../../Modelo/Archivos_CSS/StyleBienvenido_Roles.css">
+        <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Menu_Navegacion.css">        
 
         <!-- USO DE ALERTAS PERZONALISADAS -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
-
-        <!-- Iconos Perzonalisados -->
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
         <!-- ===== BOXICONS ===== -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>   
@@ -70,30 +74,23 @@
                                 <span class="text nav-text">Inicio</span>
                             </a>
                         </li>
-
-                        <li class="nav-link">
-                            <a href="#pagina1">
-                                <i class='bx bx-user icon'></i>
-                                <span class="text nav-text">Usuarios</span>
-                            </a>
-                        </li>
                         
                         <li class="nav-link">
-                            <a href="#pagina2">
+                            <a href="#GestionVehicular">
                                 <i class='bx bx-bus icon'></i>
                                 <span class="text nav-text">Flota</span>
                             </a>
                         </li>
 
                         <li class="nav-link">
-                            <a href="#pagina4">
+                            <a href="#GestionMantenimientos">
                                 <i class='bx bxs-wrench icon'></i>
                                 <span class="text nav-text">Mantenimientos</span>
                             </a>
                         </li>
 
                         <li class="nav-link">
-                            <a href="#pagina5">
+                            <a href="#GestionSuministros">
                                 <i class='bx bxs-package icon'></i>
                                 <span class="text nav-text">Suministros</span>
                             </a>
@@ -119,7 +116,9 @@
         </nav>
 
         <div>
-                <!-- Encabezado del container-->
+            
+        <!-- Encabezado del container-->
+
     <?php
 
         // Verificar si el nombre está establecido en la sesión
@@ -138,16 +137,7 @@
         
         <?php } else { 
 
-            // Iniciar la sesión si no está iniciada
-            session_start();
-
-            // Eliminar todas las variables de sesión
-            $_SESSION = array();
-
-            // Destruir la sesión
-            session_destroy();
-
-            header('Location: index.php');
+            header('Location: ../../Controlador/Utilidades/Sesion_Destroy.php');
             exit;
             
         } ?>
@@ -156,28 +146,24 @@
 
 
         <div id="iframe-container">
+
+            <section id="GestionVehicular"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" -->
+                <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
+            </section>
             
-            <section id="pagina1"><!-- Aqui mostrar la pagina "GESTION DE USUARIOS"-->                
-                <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
-            </section>
+            <!--
 
-            <!-- 
-            <section id="pagina2"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" 
-                <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
-            </section>                        
-
-            <section id="pagina3"><!-- Aqui mostrar la pagina "DOCUMENTOS"                
+            <section id="pagina3"> Aqui mostrar la pagina "DOCUMENTOS"                
                 <iframe  src=""></iframe>
+            </section> -->
+
+            <section id="GestionMantenimientos"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->            
+                <iframe  src="../Administrador/Adm_Gestion_Mantenimientos.php"></iframe>
             </section>
 
-            <section id="pagina4"><!-- Aqui mostrar la pagina "MANTENIMIENTOS"              
-                <iframe  src=""></iframe>
+            <section id="GestionSuministros"><!-- Aqui mostrar la pagina "SUMINISTROS" -->                
+                <iframe  src="../Administrador/Adm_Gestion_Suministros.php"></iframe>
             </section>
-
-            <section id="pagina5"><!-- Aqui mostrar la pagina "SUMINISTROS"                
-                <iframe  src=""></iframe>
-            </section>
-            -->
 
         </div>    
         
