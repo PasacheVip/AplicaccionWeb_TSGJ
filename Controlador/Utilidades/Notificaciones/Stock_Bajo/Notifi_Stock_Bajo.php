@@ -8,6 +8,9 @@
     // Crear un array para almacenar los datos
     $response = array();
 
+    // Se crea una instancia de la clase Conexion_BD para establecer la conexión
+    $conn = new Conexion_BD();
+
     // Verificar si la variable stock_bajo existe
     if (isset($_SESSION['stock_bajo'])) {
 
@@ -18,7 +21,7 @@
         $sqlMantenimiento = "SELECT producto FROM producto WHERE id_producto = ?";
 
         // Preparamos la consulta    
-        if ($stmt = $conn->prepare($sqlMantenimiento)) {
+        if ($stmt = $conn->prepareStatement($sqlMantenimiento)) {
 
             // Vincular parámetros
             $stmt->bind_param("i", $id_producto);
@@ -59,8 +62,9 @@
         }
 
     } else {
+
         // Si las variables de sesión no existen o están vacías, enviar un mensaje de error
-        $response['idMessage'] = "No existe un dato en la sesión [stock_bajo]";
+        $response['idMessageFalse'] = "No existe un dato en la sesión [stock_bajo]";
     }
 
     // Convertir el array de respuesta a formato JSON y enviarlo de vuelta al cliente

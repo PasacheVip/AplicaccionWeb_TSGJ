@@ -17,18 +17,17 @@
                     title: 'Producto: ' + producto ,
                     text: '¡Queda Poco Stock!',
                     icon: 'error',
-                    showConfirmButton: false,
-                    timer: 1800
+                    showConfirmButton: true,
                 });
 
                 // Mostrar los datos en la consola para verificar
-                console.log("El Producto: "+ producto +" Registrado Correctamente");
+                console.log("-> Producto: "+ producto +" le quedan pocas unidades");
 
                 // Realizar una nueva solicitud AJAX para ELIMINAR LA SESSION ID
                 $.ajax({
 
                     type: "GET",
-                    url: "../../Controlador/Utilidades/Notificaciones/Suministro/POST_Eliminar_productoNombre.php",
+                    url: "../../Controlador/Utilidades/Notificaciones/Stock_Bajo/Delate_Notifi_Stock_Bajo.php",
                     dataType: "json", // Especificar que esperas una respuesta JSON
                 
                     success: function(response) {
@@ -57,7 +56,7 @@
                     error: function(xhr, status, error) {
 
                         // Informar en la consola si ocurrió un error al eliminar la sesión
-                        console.error("-> AJAX(DELATE_Notifi_Agregar_Suministro.php): ", error);
+                        console.error("-> AJAX(Delate_Notifi_Stock_Bajo.php): ", error);
 
                     }
                 });         
@@ -65,10 +64,10 @@
             } else {
                 
                 // Acceder a los datos recibidos
-                var idMessage = response.idMessage; //Accede al dato recibido ("ERROR")
+                var idMessageFalse = response.idMessageFalse; //Accede al dato recibido ("ERROR")
 
                 // Mostrar los datos en la consola para verificar
-                console.log("-> Mensaje de [Notifi_Agregar_Suministro.js]:", idMessage);
+                console.log("-> Mensaje de [Stock_Bajo.js]:", idMessageFalse);
                                         
             }
         },        
@@ -83,6 +82,6 @@
             });
 
             // Registrar el error en la consola
-            console.error("-> AJAX(Notifi_Agregar_Suministro.php):", error);
+            console.error("-> Error Especifico):", error);
         }
     });
