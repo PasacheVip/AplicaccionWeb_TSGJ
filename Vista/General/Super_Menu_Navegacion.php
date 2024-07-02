@@ -151,12 +151,6 @@
                 <iframe  src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
             </section>
             
-            <!--
-
-            <section id="pagina3"> Aqui mostrar la pagina "DOCUMENTOS"                
-                <iframe  src=""></iframe>
-            </section> -->
-
             <section id="GestionMantenimientos"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->            
                 <iframe  src="../Administrador/Adm_Gestion_Mantenimientos.php"></iframe>
             </section>

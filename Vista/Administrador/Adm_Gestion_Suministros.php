@@ -53,7 +53,7 @@
                 <th style="text-align: left">Categoria</th>
                 <th style="text-align: left">Unidad de Medida</th>
                 <th style="text-align: left">Proveedor</th>
-                <th style="text-align: center">Codigo_Producto</th>
+                <th style="text-align: center">C_Producto</th>
                 <th style="text-align: left">Nombre Del Producto</th>
                 <th style="text-align: right">Precio Referencial</th>
                 <th style="text-align: right">Stock Disponible</th>
@@ -120,6 +120,9 @@
     
     <!--===== ARCHIVO JS - NOTIFIFACION DE TIPO DE CAMBIO ===== -->
     <script src="../../Modelo/Archivos_JS/Notificaciones/Tipo_Cambio/TipoDeCambio.js"></script>
+
+    <!-- ==== ARCHIVO JS - NOTIFIFACION DE STOCK BAJO ===== -->
+    <script src="../../Modelo/Archivos_JS/Notificaciones/Stock_Bajo/Stock_Bajo.js"></script>
 
 </body>
 </html>
