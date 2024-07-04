@@ -72,7 +72,7 @@
 
         <!-- CODIGO PRODUCTO -->
         <label for="codigo_producto">Codigo del Producto:</label>
-        <input type="num" id="codigo_producto" name="codigo_producto" onkeyup="limitarDigitos(this, 10)">
+        <input type="text" id="codigo_producto" name="codigo_producto" onkeyup="convertirAMayusculas(this)">
         
         <!-- NOMBRE PRODUCTO -->
         <label for="nombre_producto">Descripción:</label>

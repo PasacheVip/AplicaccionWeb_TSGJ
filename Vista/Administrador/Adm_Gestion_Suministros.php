@@ -51,12 +51,11 @@
             <tr>
                 <th style="text-align: center">ID</th>
                 <th style="text-align: left">Categoria</th>
-                <th style="text-align: left">Unidad de Medida</th>
+                <th style="text-align: center">Stock Disponible</th>
                 <th style="text-align: left">Proveedor</th>
                 <th style="text-align: center">C_Producto</th>
                 <th style="text-align: left">Nombre Del Producto</th>
                 <th style="text-align: right">Precio Referencial</th>
-                <th style="text-align: right">Stock Disponible</th>
                 <th style="text-align: Center">Acciones</th>
             </tr>
         </thead>
@@ -85,12 +84,11 @@
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id_producto'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_categoria'] . "</td>";
-                        echo "<td style='text-align: left;'>" . $row['id_presentacion'] . "</td>";
+                        echo "<td style='text-align: center;'>" . $row['stock_disponible'] . ' ' . $row['id_presentacion'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['id_proveedor'] . "</td>";
                         echo "<td style='text-align: center;'>" . $row['codigo'] . "</td>";
                         echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
                         echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00 <a href='../../Controlador/Tipo_Cambio/MySQL_TipoDeCambio.php?valor=". $row['precio'] ."'><i class='bx bxs-badge-dollar'></i></a></td>";
-                        echo "<td style='text-align: right;'>" . $row['stock_disponible'] . " " . $row['id_presentacion'] . "</td>";
                         echo "<td>
                                 <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>

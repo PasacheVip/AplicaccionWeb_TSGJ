@@ -18,10 +18,10 @@
         $id_producto = $_SESSION['stock_bajo'];
 
         // Construimos la consulta SQL para obtener el nombre del producto
-        $sqlMantenimiento = "SELECT producto FROM producto WHERE id_producto = ?";
+        $sqlStock = "SELECT producto FROM producto WHERE id_producto = ?";
 
         // Preparamos la consulta    
-        if ($stmt = $conn->prepareStatement($sqlMantenimiento)) {
+        if ($stmt = $conn->prepareStatement($sqlStock)) {
 
             // Vincular parámetros
             $stmt->bind_param("i", $id_producto);

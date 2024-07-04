@@ -6,16 +6,16 @@
     // Crear un array para almacenar los datos
     $response = array();
 
-    // Verificar si existe un valor en la session
-    if (isset($_SESSION['idSuministro'])) {
+    // Verificar si la Variable usuarioUpdate existe
+    if (isset($_SESSION['Producto'])) {
 
-        // Almacenar los datos de PLACA en el array "response"
-        $response['Suministro'] = $_SESSION['idSuministro'];
+        // Obtenemos los datos de la session "vehiculoPlaca"
+        $response['idMessage'] = $_SESSION['Producto'];
 
     } else {
         
         // Si las variables de sesión no existen o están vacías, enviar un mensaje de error
-        $response['error'] = "No existe un dato en la session [idSuministro]";
+        $response['idMessageFalse'] = "No existe un dato en la session [Producto]";
 
     }
 

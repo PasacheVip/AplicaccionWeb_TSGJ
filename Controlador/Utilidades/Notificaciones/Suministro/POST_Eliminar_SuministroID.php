@@ -7,18 +7,18 @@
     $response = array();
 
     // Verificar si existe la sesión ID y eliminarla si está presente
-    if (isset($_SESSION['idSuministro'])) {
+    if (isset($_SESSION['Producto'])) {
         
         // Eliminar la variable de sesión
-        unset($_SESSION['idSuministro']); 
+        unset($_SESSION['Producto']); 
 
         // Respuesta simple para indicar que la sesión se eliminó correctamente
-        $response['idSuministro'] = "¡La Sesión [idSuministro] se logro eliminar correctamente!";
+        $response['Producto'] = "¡La Sesión [Producto] se logro eliminar correctamente!";
         
     }else{
 
         // Respuesta simple para indicar que la sesión nose eliminó correctamente
-        $response['error'] = "¡La Sesión [idSuministro] nose Logro Eliminar Correctamente!";
+        $response['error'] = "¡La Sesión [Producto] nose Logro Eliminar Correctamente!";
 
     }
 

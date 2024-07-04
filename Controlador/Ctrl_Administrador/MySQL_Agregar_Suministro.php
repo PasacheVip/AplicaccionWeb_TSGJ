@@ -25,7 +25,7 @@
         $stmt = $conn->prepareStatement($sql);
 
         // Vincular parámetros y ejecutar la consulta
-        $stmt->bind_param("iiiisdi", $id_categoria, $id_presentacion, $id_proveedor, $codigo, $producto, $precio, $stock_disponible);
+        $stmt->bind_param("iiissdi", $id_categoria, $id_presentacion, $id_proveedor, $codigo, $producto, $precio, $stock_disponible);
         $stmt->execute();
 
         // Se ejecuta la consulta y se verifica si se ha insertado correctamente

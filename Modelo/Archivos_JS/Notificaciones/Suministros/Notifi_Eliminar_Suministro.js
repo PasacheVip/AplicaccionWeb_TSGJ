@@ -7,14 +7,14 @@
 
         success: function(response) {
             
-            if (response.hasOwnProperty('Suministro')) {
+            if (response.hasOwnProperty('idMessage')) {
                 
                 // Acceder a los datos recibidos
-                var SuministroID = response.Suministro; //Accede al dato recibido ("PLACA VEHICULO")
+                var producto = response.idMessage;
                 
                 // Mostrar los datos en una alerta
                 Swal.fire({
-                    title: 'El Producto: ' + SuministroID ,
+                    title: 'El Producto: ' + producto ,
                     text: '¡Eliminado Correctamente!',
                     icon: 'success',
                     showConfirmButton: false,
@@ -22,7 +22,7 @@
                 });
 
                 // Mostrar los datos en la consola para verificar
-                console.log("El prodcuto: "+ SuministroID +" Eliminado Correctamente");               
+                console.log("El producto: "+ producto +" Eliminado Correctamente");               
                 
                 // Realizar una nueva solicitud AJAX para ELIMINAR LA SESSION ID
                 $.ajax({
@@ -33,10 +33,10 @@
                 
                     success: function(response) {
 
-                        if (response.hasOwnProperty('idSuministro')) {
+                        if (response.hasOwnProperty('Producto')) {
 
                             // Acceder al dato 'vehiculo_delate' en la respuesta JSON
-                            var idMessage = response.idSuministro;
+                            var idMessage = response.Producto;
                     
                             // Informar en la consola si se eliminó la sesión correctamente
                             console.log("-> Mensaje:", idMessage);
@@ -65,10 +65,10 @@
             } else {
                 
                 // Acceder a los datos recibidos
-                var error = response.error; //Accede al dato recibido ("ERROR")
+                var idMessageFalse = response.idMessageFalse; //Accede al dato recibido ("ERROR")
                 
                 // Mostrar los datos en la consola para verificar
-                console.log("-> Mensaje de [Notifi_Eliminar_Suministro.php]:", error);                
+                console.log("-> Mensaje de [Notifi_Eliminar_Suministro.php]:", idMessageFalse);                
 
             }
         },        

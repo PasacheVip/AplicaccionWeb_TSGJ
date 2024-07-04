@@ -10,7 +10,7 @@
             if (response.hasOwnProperty('idMessage')) {
                 
                 // Acceder a los datos recibidos
-                var producto = response.idMessage; //Accede al dato recibido ("VEHICULO PLACA")
+                var producto = response.idMessage; 
                 
                 // Mostrar los datos en una alerta
                 Swal.fire({
