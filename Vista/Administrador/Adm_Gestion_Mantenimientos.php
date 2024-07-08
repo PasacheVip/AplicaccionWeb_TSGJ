@@ -79,7 +79,7 @@
                         echo "<td>" . $row['fecha'] . "</td>";
                         echo "<td>" . $row['tipo_mantenimiento'] . "</td>";
                         echo "<td>
-                                <a href='Adm_Editar_Mantenimiento?IDM=" . $row['id_mantenimiento'] . "'><i class='bx bx-edit bx-sm'></i></a>
+                                <a href='Adm_Editar_Mantenimiento.php?IDM=" . $row['id_mantenimiento'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Mantenimiento.php?IDM=" . $row['id_mantenimiento'] . "'><i class='bx bx-trash bx-sm'></i></a>
                              </td>";
                         echo "</tr>";

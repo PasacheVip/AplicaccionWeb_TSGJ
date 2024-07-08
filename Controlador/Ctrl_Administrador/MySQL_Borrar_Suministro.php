@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
         if ($result->num_rows > 0) {
             
             $productoCon = $result->fetch_assoc();
-            $_SESSION['Producto'] = $productoCon['nombre']; // Guarda el nombre del producto en la sesión
+            $_SESSION['Producto'] = $productoCon['producto']; // Guarda el nombre del producto en la sesión
 
             // Construir la consulta SQL para eliminar en Primera instancia los productos de la tabla requerimientos.
             $sql = "DELETE FROM requerimientos WHERE id_producto = ?";
