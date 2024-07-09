@@ -43,17 +43,29 @@
         $sqlTipoMantenimiento = "SELECT * FROM tipo_mantenimiento ORDER BY id";
         $dataTipoMantenimientoSelect = $connMySQL->executeQuery($sqlTipoMantenimiento);
 
+        // CONSULTA PARA OBTENER TODOS LOS VEHICULOS
+        $sqlFlotaVehiculos = "SELECT * FROM vehiculos ORDER BY id";
+        $dataFlotaVehiculosSelect = $connMySQL->executeQuery($sqlFlotaVehiculos);
+
     ?>
 
     <!-- Formulario para editar el mantenimiento -->
-    <form action="../../Controlador/MySQL_Mantenimientos/MySQL_Editar_Mantenimientos.php" method="POST">
+    <form action="../../Controlador/MySQL_Mantenimientos/MySQL_Editar_Mantenimiento.php" method="POST">
         
         <!-- Campo oculto para almacenar el ID del mantenimiento -->
-        <input type="hidden" name="id_mantenimiento" value="<?php echo $mantemiento['id_mantenimiento']; ?>">
+        <input type="hidden" id="id_mantenimiento" name="id_mantenimiento" value="<?php echo $mantemiento['id_mantenimiento']; ?>">
         
         <!-- Campo para editar el nombre del Encargado -->
         <label for="nombre">Vehiculo:</label>
-        <input type="num" id="vehiculo" name="vehiculo" value="<?php echo $mantemiento['id_vehiculo']; ?>" required>
+        <select id="flotaVehiculo" name="flotaVehiculo">
+            <option value="">Seleccione el Vehiculo Nuevo</option> <!-- Opción por defecto para seleccionar -->
+            <?php
+                while ($dataSelect = mysqli_fetch_array($dataFlotaVehiculosSelect)) { ?>
+                  <option value="<?php echo $dataSelect["id"]; ?>">
+                    <?php echo utf8_encode($dataSelect["placa"]); ?>
+                  </option>
+              <?php } ?>
+        </select>
 
         <!-- Campo para editar el nombre del Encargado -->
         <label for="encargado">Encargado:</label>
@@ -66,18 +78,18 @@
         <!-- Campo para editar la fecha del mantenimiento -->
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" value="<?php echo $mantemiento['fecha']; ?>" required>
-
-        <!-- Campo para seleccionar el tipo de mantenimiento -->
+        <br>
+        
+        <!-- ===== TIPO DE MANTEMINIENTO ===== -->
         <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
-        <select name="tipo_mantenimiento" class="form-control form-control-sm">
-        <option value="<?php echo $mantemiento['tipo_mantenimiento']; ?>">Seleccione el Nuevo Mantenimiento</option>
-
+        <select id="tipo_mantenimiento" name="tipo_mantenimiento">
+            <option value="">Seleccione un tipo</option> <!-- Opción por defecto para seleccionar -->
             <?php
-              while ($dataSelect = mysqli_fetch_array($dataTipoMantenimientoSelect)) { ?>
-                <option value="<?php echo $dataSelect["id"]; ?>">
-                  <?php echo utf8_encode($dataSelect["descripcion"]); ?>
-                </option>
-            <?php } ?>
+                while ($dataSelect = mysqli_fetch_array($dataTipoMantenimientoSelect)) { ?>
+                  <option value="<?php echo $dataSelect["id"]; ?>">
+                    <?php echo utf8_encode($dataSelect["descripcion"]); ?>
+                  </option>
+              <?php } ?>
         </select>
 
         <!-- Botón de envío para actualizar el mantenimiento -->
