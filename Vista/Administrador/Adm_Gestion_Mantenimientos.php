@@ -66,9 +66,8 @@
                 // Ejecutamos la consulta SQL
                 $result = $conn->executeQuery($sql);
 
-                // Se verificar si la consulta devolvió resultados
-                if ($result) {
-
+                if ($result && $result->num_rows > 0) {
+                    
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td style='text-align: center;'>" . $row['id_mantenimiento'] . "</td>";
@@ -87,7 +86,7 @@
 
                 } else {
 
-                    echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+                    echo "<tr><td colspan='8'>No se encontraron registros</td></tr>";
 
                 }
 

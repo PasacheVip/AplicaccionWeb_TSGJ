@@ -11,12 +11,10 @@
 
     <!-- ==== jQuery (Para Solicitudes Ajax)===== -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+    
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Gestion_Mantenimiento.css">
     <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_Flota.css">
-    
 </head>
 <body>
 

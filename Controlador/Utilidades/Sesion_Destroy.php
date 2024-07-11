@@ -3,7 +3,6 @@
     // Iniciar la sesión si no está iniciada
     session_start();
 
-    session_start();
     session_unset();
     session_destroy();
 

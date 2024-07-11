@@ -83,11 +83,18 @@
                 $resultCheckStock = $stmtCheckStock->get_result();
                 $rowCheckStock = $resultCheckStock->fetch_assoc();
 
-                if ($rowCheckStock['stock_disponible'] <= 1) {
+                if ($rowCheckStock['stock_disponible'] = 1) {
 
                     // Aquí se envia una notificación sobre el bajo stock
                     echo "Advertencia: El producto ID $id_producto tiene un stock bajo.";
                     $_SESSION['stock_bajo'] = $id_producto;
+
+                } else if ($rowCheckStock['stock_disponible'] = 0) {
+
+                    // Aquí se envia una notificación sobre el bajo stock
+                    echo "Advertencia: El producto ID $id_producto No tiene Stock Disponible.";
+                    $_SESSION['stock_negativo'] = $id_producto;
+
                 }
             }
 

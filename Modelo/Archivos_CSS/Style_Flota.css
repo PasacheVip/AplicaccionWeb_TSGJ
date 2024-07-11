@@ -70,3 +70,26 @@ input[type="submit"]:hover {
     padding-right: 10px;
     margin-bottom: 10px;
 }
+
+/* Estilos para el botón de envío */
+form button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #009adf;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+/* Estilos para el botón de cancelar */
+form button[type="button"] {
+    background-color: #ccc;
+}
+
+/* Estilos para los botones al pasar el ratón */
+form button[type="button"]:hover {
+    background-color: #0073aa;
+}
