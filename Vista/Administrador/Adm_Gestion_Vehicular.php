@@ -56,7 +56,7 @@
     <!-- Botón para agregar Nuevo Vehiculo y eliminar vehiculo -->
     <div class="button-borders">
         <button role="button" class="button-name" onclick="location.href='Adm_Formulario_Flota.php'">Agregar Nuevo Veh&iacute;culo+</button>
-        <button role="button" class="button-name" onclick="location.href='Adm_Gestion_Usuarios.php'">Actualizar</button>
+        <button role="button" class="button-name" onclick="location.href='Adm_Gestion_Vehicular.php'">Actualizar</button>
     </div>
 
     <!-- Tabla -->
