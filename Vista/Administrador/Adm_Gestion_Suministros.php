@@ -77,8 +77,8 @@
                 $result = $conn->executeQuery($sql);
 
                 // Se verificar si la consulta devolvió resultados
-                if ($result) {
-
+                if ($result && $result->num_rows > 0) {
+                    
                     while ($row = $result->fetch_assoc()) {
 
                         echo "<tr>";
@@ -98,7 +98,9 @@
 
                 } else {
 
-                    echo "<tr><td colspan='6'>¡Actualmente no cuentas con ningun Suministro!</td></tr>";
+                    echo "<tr>";
+                    echo "<td colspan='8'>¡Actualmente no cuentas con ningun Suministro!</td>";
+                    echo "</tr>";
 
                 }
 
