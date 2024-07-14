@@ -1,7 +1,6 @@
 <?php
-
-    // Iniciar la sesión si no está iniciada
     session_start();
+
 
     // Incluir OBLIGATORIAMENTE el archivo de conexión a la base de datos en el Documento
     require_once "../Utilidades/Conexion_BD.php";
