@@ -1,11 +1,9 @@
 <?php
+    session_start();
 
-// Incluir OBLIGATORIAMENTE el archivo de conexión a la base de datos en el Documento
-require_once "../Utilidades/Conexion_BD.php";
 
-// Recibir datos del formulario de inicio de sesión
-$nombre_usuario = $_POST['nameuser'];
-$contrasena = $_POST['password'];
+    // Incluir OBLIGATORIAMENTE el archivo de conexión a la base de datos en el Documento
+    require_once "../Utilidades/Conexion_BD.php";
 
 // Crear una instancia de la clase Database
 $conn = new Conexion_BD();
