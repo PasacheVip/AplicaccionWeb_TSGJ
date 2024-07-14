@@ -1,3 +1,4 @@
+    
     // Realizar una solicitud AJAX para obtener los valores de sesión
     $.ajax({
 

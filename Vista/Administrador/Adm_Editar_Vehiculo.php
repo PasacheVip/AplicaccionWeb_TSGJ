@@ -82,7 +82,7 @@
     
     <form action="../../Controlador/Ctrl_Administrador/MySQL_Editar_Vehiculo.php" id="Registrar_Flota"  method="post" novalidate>
       
-        <h2><hr>Registrar Nuevo Veh&iacute;culo<hr></h2>
+        <h2><hr>Modificar Veh&iacute;culo<hr></h2>
         
         <diV class="colums">
           

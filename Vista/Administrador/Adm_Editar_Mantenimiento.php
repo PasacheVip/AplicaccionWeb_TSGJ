@@ -14,13 +14,10 @@
 
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Gestion_Mantenimiento.css">
-    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_Flota.css">
+    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Gestion_Editar_Mantenimiento.css">
     
 </head>
 <body>
-
-    <h1>Editar Mantenimiento</h1>
 
     <?php
     // Incluir el archivo de conexión a la base de datos
@@ -61,6 +58,8 @@
     <!-- Formulario para editar el mantenimiento -->
     <form action="../../Controlador/MySQL_Mantenimientos/MySQL_Editar_Mantenimiento.php" method="POST">
         
+        <h1>Editar Mantenimiento</h1>
+
         <!-- Campo oculto para almacenar el ID del mantenimiento -->
         <input type="hidden" id="id_mantenimiento" name="id_mantenimiento" value="<?php echo $mantemiento['id_mantenimiento']; ?>">
         

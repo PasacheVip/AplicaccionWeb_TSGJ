@@ -311,16 +311,6 @@ body.dark .home .text{
     color: var(--body-color);
 }
 
-/* Estilos para el contenedor del Titulo y Iframe*/
-#titulo-container{    
-    margin-top: 2rem;
-    /* Establecer margen a la izquierda para dejar espacio para la barra lateral */
-    margin-left: 122px; /* 90px + 2rem = 122px (1rem = 16px) */
-    /* Transición suave del margen izquierdo */
-    transition: margin-left 0.3s;
-    /* Ocultar el contenido que sobrepasa el contenedor */
-    overflow: hidden;
-}
 
 #iframe-container {
     /* Establecer margen a la izquierda para dejar espacio para la barra lateral */
@@ -339,12 +329,6 @@ body.dark .home .text{
     width: 250px;
 }
 
-/* Estilos para el contenedor del iframe cuando la barra lateral está en estado de expansión */
-#titulo-container.expand {
-    /* Desplazar el margen izquierdo para dejar espacio para la barra lateral expandida */
-    margin-left: 284px;
-}
-
 #iframe-container.expand {
     /* Desplazar el margen izquierdo para dejar espacio para la barra lateral expandida */
     margin-left: 250px;
@@ -359,4 +343,29 @@ iframe {
     /* Quitar el borde del iframe */
     border: none;
     background-color: white;
+}
+
+.bienvenidoUser{
+
+    text-align: center;
+    
+    /* Establecer el ancho al 100% del contenedor */
+    width: 100%;
+    /* Establecer la altura al 100% del viewport */
+    height: 100vh;
+    /* Quitar el borde del iframe */
+    border: none;
+    background-color: white;
+    
+}
+
+/* Estilos para el contenedor del Titulo y Iframe*/
+#titulo-container{    
+    margin-top: 2rem;
+    /* Establecer margen a la izquierda para dejar espacio para la barra lateral */
+    margin-left: 122px; /* 90px + 2rem = 122px (1rem = 16px) */
+    /* Transición suave del margen izquierdo */
+    transition: margin-left 0.3s;
+    /* Ocultar el contenido que sobrepasa el contenedor */
+    overflow: hidden;
 }

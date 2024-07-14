@@ -7,7 +7,8 @@ class Conexion_BD {
     private $usuario = "root";
     private $contrasena = "";
     private $base_de_datos = "tsgj-v1-bd";
-    private $conexion;
+    // public $report_mode;
+    public $conexion;
 
     // Método para establecer la conexión a la base de datos
     public function __construct() {
@@ -19,6 +20,10 @@ class Conexion_BD {
         if ($this->conexion->connect_error) {
             die("Error de conexión: " . $this->conexion->connect_error);
         }
+
+        // Establecer el modo de informe de errores de MySQLi
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        
     }
 
     // Método para ejecutar una consulta SQL
