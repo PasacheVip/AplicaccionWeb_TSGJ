@@ -1,4 +1,6 @@
 <?php
+
+// Recuperar datos de la session iniciada anterior
 session_start();
 
 // Destruir cualquier sesión existente
@@ -12,6 +14,7 @@ header("Pragma: no-cache");
 
 // Iniciar una nueva sesión después de destruir la existente
 session_start();
+
 ?>
 
 <!DOCTYPE html>
