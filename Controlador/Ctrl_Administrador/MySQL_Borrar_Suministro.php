@@ -8,7 +8,7 @@ session_start();
 
 // Verificar si el usuario está autenticado, si no lo está, DESTRUYE LA SESSION
 if (isset($_SESSION['usuario'])) {
-    
+
     // Verificar si se proporcionó un ID correcto del SUMINISTRO
     if (isset($_GET['ID_S']) && !empty($_GET['ID_S'])) {
 
@@ -27,7 +27,7 @@ if (isset($_SESSION['usuario'])) {
 
         // Verificar si se encontró el producto
         if ($result->num_rows > 0) {
-            
+
             $productoCon = $result->fetch_assoc();
             $_SESSION['Producto'] = $productoCon['producto']; // Guarda el nombre del producto en la sesión
 
@@ -45,27 +45,52 @@ if (isset($_SESSION['usuario'])) {
 
             // Verificar si la eliminación afectó a alguna fila
             if ($stmt->affected_rows > 0) {
+
+                // Confirmar la transacción
+                $conn->commit();
+
                 // La eliminación fue exitosa
+                $_SESSION['message'] = "Suministro eliminado correctamente.";
+                $_SESSION['message_type'] = "success";
+
+                // Se redirige a la Pagina Gestion De Suministro
                 header("Location: ../../Vista/Administrador/Adm_Gestion_Suministros.php");
+
             } else {
-                echo("La eliminación no afectó a ninguna fila (posiblemente el ID SUMINISTRO no existe)");
+
+                // Revertir la transacción
+                $conn->rollback();
+
+                $_SESSION['message'] = "La eliminación no afectó a ninguna fila (posiblemente el Suministro no existía).";
+                $_SESSION['message_type'] = "error";
+
+                // Se redirige a la Pagina Gestion De Suministro
+                header("Location: ../../Vista/Administrador/Adm_Gestion_Suministros.php");
+                
             }
+
         } else {
-            echo("No se encontró ningún producto con el ID proporcionado");
+
+            $_SESSION['message'] = "No se encontró ningún producto con el ID proporcionado";
+            $_SESSION['message_type'] = "error";
         }
 
     } else {
-        // Redireccionar a la página de gestión de Suministros
-        header("Location: ../../Vista/Administrador/Adm_Gestion_Suminitros.php");
+
+        $_SESSION['message'] = "No se encontró ningún producto con el ID proporcionado";
+        $_SESSION['message_type'] = "error";
+
+        header("Location: ../../Vista/Administrador/Adm_Gestion_Suministros.php");
         exit();
+
     }
 
 } else {
+
     header("Location: ../../Controlador/Utilidades/Sesion_Destroy.php");
     exit();
+    
 }
 
 // Cerrar la conexión a la base de datos
 $conn->closeConnection();
-
-?>

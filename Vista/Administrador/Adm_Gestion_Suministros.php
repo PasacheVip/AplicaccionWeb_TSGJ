@@ -111,12 +111,9 @@
 
     <!-- ==== ARCHIVO JS - NOTIFIFACION DE AGREGAR SUMINISTRO ===== -->
     <script src="../../Modelo/Archivos_JS/Notificaciones/Suministros/Notifi_Agregar_Suministro.js"></script>
-
-    <!-- ===== ARCHIVO JS - NOTIFIFACION DE EDITAR VEHICULO ===== 
-    <script src="../../Modelo/Archivos_JS/Notifi_Editar_Vehiculo.js"></script>-->
     
-    <!--===== ARCHIVO JS - NOTIFIFACION DE ELIMINAR SUMINISTRO ===== -->
-    <script src="../../Modelo/Archivos_JS/Notificaciones/Suministros/Notifi_Eliminar_Suministro.js"></script>
+    <!-- ==== NOTIFICACION DE LA ELIMINACION DEL MANTENIMIENTO ===== -->
+    <?php require_once '../../Modelo/Archivos_JS/Notificaciones/Succes_Error/notification.php'; ?>
     
     <!--===== ARCHIVO JS - NOTIFIFACION DE TIPO DE CAMBIO ===== -->
     <script src="../../Modelo/Archivos_JS/Notificaciones/Tipo_Cambio/TipoDeCambio.js"></script>
