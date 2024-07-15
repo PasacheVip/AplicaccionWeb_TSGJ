@@ -60,7 +60,7 @@ function validarFormulario(evento) {
     }
 
     // Input Fecha
-    var Fecha = document.getElementById('Fecha').value;
+    var Fecha = document.getElementById('fecha').value;
     if (Fecha.length === 0) {
         Swal.fire({
             width: '23rem',

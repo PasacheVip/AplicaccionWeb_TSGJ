@@ -61,7 +61,7 @@
         <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this)" required>
         
         <!-- ===== SELECCIONAR PRODUCTOS ===== -->
-        <label for="produtos">Productos a Utilizar:</label>
+        <label for="productos">Productos a Utilizar:</label>
         <select id="produtos" name="produtos">
             <option value="">Seleccione un Producto</option> <!-- Opción por defecto para seleccionar -->
             <?php
@@ -85,7 +85,7 @@
     
         <!-- ===== FECHA DEL MANTIMIENTO ===== -->
         <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required>
+        <input type="date" id="fecha" name="fecha">
         
         <!-- ===== TIPO DE MANTEMINIENTO ===== -->
         <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
