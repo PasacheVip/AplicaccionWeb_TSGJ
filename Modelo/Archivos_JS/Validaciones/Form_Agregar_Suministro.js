@@ -58,17 +58,18 @@ function validarFormulario(evento) {
             timer: 1500
         });
         return;
-    } else if (codigo_producto.length !== 10 || isNaN(codigo_producto)) {
-        Swal.fire({
-            width: '22rem',
-            position: 'center',
-            icon: 'info',
-            title: 'Por favor, Ingrese un Codigo Válido (10 dígitos)',
-            showConfirmButton: false,
-            timer: 1500
-        });
-        return;
-    }
+    } 
+    // else if (codigo_producto.length !== 10 || isNaN(codigo_producto)) {
+    //     Swal.fire({
+    //         width: '22rem',
+    //         position: 'center',
+    //         icon: 'info',
+    //         title: 'Por favor, Ingrese un Codigo Válido (10 dígitos)',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //     });
+    //     return;
+    // }
     
     // Input Nombre del Producto
     var nombre_producto = document.getElementById('nombre_producto').value;
@@ -96,17 +97,18 @@ function validarFormulario(evento) {
                 timer: 1500
             });
             return;
-        } else if (precio_producto.length !== 10 || isNaN(precio_producto)) {
-            Swal.fire({
-                width: '22rem',
-                position: 'center',
-                icon: 'info',
-                title: 'Por favor, Ingrese un Precio Válido (10 dígitos)',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            return;
-        }
+        } 
+        // else if (precio_producto.length !== 10 || isNaN(precio_producto)) {
+        //     Swal.fire({
+        //         width: '22rem',
+        //         position: 'center',
+        //         icon: 'info',
+        //         title: 'Por favor, Ingrese un Precio Válido (10 dígitos)',
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     });
+        //     return;
+        // }
 
         // Input Cantidad Producto
         var stock_producto = document.getElementById('stock_producto').value;
@@ -120,17 +122,18 @@ function validarFormulario(evento) {
                 timer: 1500
             });
             return;
-        } else if (stock_producto.length !== 10 || isNaN(stock_producto)) {
-            Swal.fire({
-                width: '22rem',
-                position: 'center',
-                icon: 'info',
-                title: 'Por favor, Ingrese una Cantidad Válida (10 dígitos)',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            return;
-        }
+        } 
+        // else if (stock_producto.length !== 10 || isNaN(stock_producto)) {
+        //     Swal.fire({
+        //         width: '22rem',
+        //         position: 'center',
+        //         icon: 'info',
+        //         title: 'Por favor, Ingrese una Cantidad Válida (10 dígitos)',
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     });
+        //     return;
+        // }
 
     this.submit();
 }
