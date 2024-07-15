@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSGJ - Agregar Mantenimientos</title>
+    
+    <!-- Icono de Pagina -->
+    <link rel="icon" href="../../Modelo/Archivos_Media/Color_LogoTipo.png" type="image/png">
+
+    <!-- USO DE ALERTAS PERZONALISADAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_ForSuministros.css">
@@ -32,7 +38,7 @@
 
     ?>
     
-    <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Suministro.php" method="POST">
+    <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Suministro.php" method="POST" id="Agregar_Suministro" novalidate>
         
         <!-- TIPO DE CATEGORIA -->
         <label for="tipo_Categoria">Tipo de Categoria:</label>
@@ -75,7 +81,7 @@
         <input type="text" id="codigo_producto" name="codigo_producto" onkeyup="convertirAMayusculas(this)">
         
         <!-- NOMBRE PRODUCTO -->
-        <label for="nombre_producto">Descripción:</label>
+        <label for="nombre_producto">Nombre del Producto:</label>
         <input type="text" id="nombre_producto" name="nombre_producto" onkeyup="convertirAMayusculas(this)"> 
         
         <!-- PRECIO PRODUCTO -->
@@ -92,6 +98,9 @@
         <button type="button" onclick="location.href='Adm_Gestion_Suministros.php'">Regresar</button>
 
     </form>
+
+    <!--===== ARCHIVO JS - VALIDACION DEL FORMULARIO =====-->
+    <script src="../../Modelo/Archivos_JS/Validaciones/Form_Agregar_Suministro.js"></script>
 
     <!--===== ARCHIVO JS - VALIDACION DE ESCRIBIR =====-->
     <script src="../../Modelo/Archivos_JS/Validacion_Escribir.js"></script>

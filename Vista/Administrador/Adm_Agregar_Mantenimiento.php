@@ -38,7 +38,7 @@
 
     ?>
     
-    <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST">
+    <form action="../../Controlador\Ctrl_Administrador\MySQL_Agregar_Mantenimiento.php" method="POST" id="Agregar_Mantenimiento" novalidate>
         
         <!-- ===== SELECCIONAR VEHICULO ===== -->
         <label for="flotaVehiculo">Vehiculo Mantenimiento:</label>
@@ -105,6 +105,9 @@
         <button type="button" onclick="location.href='Adm_Gestion_Mantenimientos.php'">Regresar</button>
 
     </form>
+
+    <!--===== ARCHIVO JS - VALIDACION DEL FORMULARIO =====-->
+    <script src="../../Modelo/Archivos_JS/Validaciones/Form_Agregar_Mantenimiento.js"></script>
 
     <!-- ===== ARCHIVO JS - VALIDACION DE ESCRIBIR ===== -->
     <script src="../../Modelo/Archivos_JS/Validacion_Escribir.js"></script>
