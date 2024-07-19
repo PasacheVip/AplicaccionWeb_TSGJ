@@ -58,18 +58,18 @@ function validarFormulario(evento) {
             timer: 1500
         });
         return;
-    } 
-    // else if (codigo_producto.length !== 10 || isNaN(codigo_producto)) {
-    //     Swal.fire({
-    //         width: '22rem',
-    //         position: 'center',
-    //         icon: 'info',
-    //         title: 'Por favor, Ingrese un Codigo Válido (10 dígitos)',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     });
-    //     return;
-    // }
+
+    } else if (codigo_producto.length > 10 ) {
+        Swal.fire({
+            width: '22rem',
+            position: 'center',
+            icon: 'info',
+            title: 'Por favor, Ingrese un Codigo Válido (10 dígitos)',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return;
+    }
     
     // Input Nombre del Producto
     var nombre_producto = document.getElementById('nombre_producto').value;

@@ -46,7 +46,7 @@ function validarFormulario(evento) {
     }
 
     // Select productos
-    var productos = document.querySelector('select[name="produtos"]').value;
+    var productos = document.querySelector('select[name="productosSeleccionados"]').value;
     if (productos.length === 0) {
         Swal.fire({
             width: '23rem',
