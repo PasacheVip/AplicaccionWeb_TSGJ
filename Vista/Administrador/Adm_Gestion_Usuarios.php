@@ -1,8 +1,5 @@
 <?php
 
-    // Iniciar la sesión si no está iniciada
-    session_start();
-
     // Incluir OBLIGATORIAMENTE el Archivo CONEXION BADE DE DATOS
     require_once '../../Controlador/Utilidades/Conexion_BD.php';
     // Incluir OBLIGATORIAMENTE el Archivo Controlador para Mostrar Usuarios
@@ -48,6 +45,14 @@
     
 </head>
 <body>
+
+<!-- MENU DE NAVEGACION -->
+
+<?php
+    require_once("../General/Menu_Navegacion.php");
+    ?>
+
+    <div id="iframe-container">
     
     <!-- Mostrar el nombre dentro del h2 -->
     <div class="container">
@@ -96,6 +101,7 @@
                 ?>
             </tbody>
         </table>
+    </div>
     </div>
     
     <!--===== ARCHIVO JS - VALIDACION DE EDITAR USUARII =====-->

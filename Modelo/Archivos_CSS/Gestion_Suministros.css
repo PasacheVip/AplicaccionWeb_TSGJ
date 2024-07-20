@@ -1,3 +1,19 @@
 body{
     margin: 2rem;
 }
+
+#iframe-container {
+    /* Establecer margen a la izquierda para dejar espacio para la barra lateral */
+    margin-left: 90px;
+    /* Establecer altura del contenedor al 100% del viewport */
+    height: 100%;
+    /* Transición suave del margen izquierdo */
+    transition: margin-left 0.3s;
+    /* Ocultar el contenido que sobrepasa el contenedor */
+    overflow: hidden;
+}
+
+#iframe-container.expand {
+    /* Desplazar el margen izquierdo para dejar espacio para la barra lateral expandida */
+    margin-left: 250px;
+}

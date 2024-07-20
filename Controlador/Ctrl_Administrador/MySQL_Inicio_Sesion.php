@@ -39,7 +39,7 @@ if ($resultado->num_rows > 0) {
             $_SESSION['id_cargo'] = $cargo_usuario;
             $_SESSION['nombre'] = $nombre;
 
-            header("Location: ../../Vista/General/Adm_Menu_Navegacion.php");
+            header("Location: ../../Vista/General/Bienvenida.php");
             exit();
         } else if ($id_cargo_usuario == 2) { // Si el Usuario Es supervisor
 

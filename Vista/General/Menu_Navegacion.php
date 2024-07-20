@@ -37,7 +37,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-
+    
     <nav class="sidebar close">
 
         <header>
@@ -68,35 +68,35 @@ if (!isset($_SESSION['usuario'])) {
                 <ul class="menu-links">
 
                     <li class="nav-link">
-                        <a href="Adm_Menu_Navegacion.php">
+                        <a href="Bienvenida.php">
                             <i class='bx bx-home-alt-2 icon'></i>
                             <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#GestionUsuarios">
+                        <a href="../Administrador/Adm_Gestion_Usuarios.php">
                             <i class='bx bx-user icon'></i>
                             <span class="text nav-text">Usuarios</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#GestionVehicular">
+                        <a href="../Administrador/Adm_Gestion_Vehicular.php">
                             <i class='bx bx-bus icon'></i>
                             <span class="text nav-text">Flota</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#GestionMantenimientos">
+                        <a href="../Administrador/Adm_Gestion_Mantenimientos.php">
                             <i class='bx bxs-wrench icon'></i>
                             <span class="text nav-text">Mantenimientos</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#GestionSuministros">
+                        <a href="../Administrador/Adm_Gestion_Suministros.php">
                             <i class='bx bxs-package icon'></i>
                             <span class="text nav-text">Suministros</span>
                         </a>
@@ -120,65 +120,6 @@ if (!isset($_SESSION['usuario'])) {
         </div>
 
     </nav>
-
-    <div id="iframe-container">
-
-        <section id="bienvenidoUsuario"><!-- INICIO -->
-
-            <div class="bienvenidoUser">
-
-                <?php
-
-                // Verificar si el nombre está establecido en la sesión
-                if (isset($_SESSION['nombre'])) {
-                    // Obtener el nombre de la sesión
-                    $nombre = $_SESSION['nombre'];
-                ?>
-                    <!-- Mostrar el nombre dentro del h2 -->
-                    <div id="titulo-container">
-
-                        <h2>Bienvenido Administrador - <?php echo $nombre; ?></h2>
-
-                        <a href="#GestionMantenimientos"><button>Comenzar</button></a>
-
-                        <!--===== ARCHIVO JS - VALIDACION DE REGISTRO =====-->
-                        <script src="../../Modelo/Archivos_JS/Notifi_Inicio_Session.js"></script>
-
-                    </div>
-
-                <?php } else {
-
-                    header('Location: ../../Controlador/Utilidades/Sesion_Destroy.php');
-                    exit;
-                } ?>
-
-            </div>
-
-        </section>
-
-        <section id="GestionUsuarios"><!-- Aqui mostrar la pagina "GESTION DE USUARIOS"-->
-            <iframe src="../Administrador/Adm_Gestion_Usuarios.php"></iframe>
-        </section>
-
-        <section id="GestionVehicular"> <!-- Aqui mostrar la pagina "GESTION VEHICULAR" -->
-            <iframe src="../Administrador/Adm_Gestion_Vehicular.php"></iframe>
-        </section>
-
-        <!--
-
-            <section id="pagina3"> Aqui mostrar la pagina "DOCUMENTOS"                
-                <iframe  src=""></iframe>
-            </section> -->
-
-        <section id="GestionMantenimientos"><!-- Aqui mostrar la pagina "MANTENIMIENTOS" -->
-            <iframe src="../Administrador/Adm_Gestion_Mantenimientos.php"></iframe>
-        </section>
-
-        <section id="GestionSuministros"><!-- Aqui mostrar la pagina "SUMINISTROS" -->
-            <iframe src="../Administrador/Adm_Gestion_Suministros.php"></iframe>
-        </section>
-
-    </div>
 
     <!--===== ARCHIVO JS - MENU DE NAVEGACION =====-->
     <script src="../../Modelo/Archivos_JS/Intere_Menu_Navegacion.js"></script>
