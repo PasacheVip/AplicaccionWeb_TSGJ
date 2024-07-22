@@ -334,38 +334,4 @@ body.dark .home .text{
     margin-left: 250px;
 }
 
-/* Estilos generales para los iframes */
-iframe {
-    /* Establecer el ancho al 100% del contenedor */
-    width: 100%;
-    /* Establecer la altura al 100% del viewport */
-    height: 100vh;
-    /* Quitar el borde del iframe */
-    border: none;
-    background-color: white;
-}
 
-.bienvenidoUser{
-
-    text-align: center;
-    
-    /* Establecer el ancho al 100% del contenedor */
-    width: 100%;
-    /* Establecer la altura al 100% del viewport */
-    height: 100vh;
-    /* Quitar el borde del iframe */
-    border: none;
-    background-color: white;
-    
-}
-
-/* Estilos para el contenedor del Titulo y Iframe*/
-#titulo-container{    
-    margin-top: 2rem;
-    /* Establecer margen a la izquierda para dejar espacio para la barra lateral */
-    margin-left: 122px; /* 90px + 2rem = 122px (1rem = 16px) */
-    /* Transición suave del margen izquierdo */
-    transition: margin-left 0.3s;
-    /* Ocultar el contenido que sobrepasa el contenedor */
-    overflow: hidden;
-}

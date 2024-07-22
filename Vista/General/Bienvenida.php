@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="../../Modelo/Archivos_Media/Color_LogoTipo.png">
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Menu_Navegacion.css">
+    <link rel="stylesheet" href="../../Modelo/Archivos_CSS/Style_Bienvenido.css">
 
     <!-- USO DE ALERTAS PERZONALISADAS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
@@ -48,8 +48,8 @@
                     <div id="titulo-container">
 
                         <h2>Bienvenido Administrador - <?php echo $nombre; ?></h2>
-
-                        <a href="#GestionMantenimientos"><button>Comenzar</button></a>
+                        <br>
+                        <a href="#GestionMantenimientos"><button class="button">Comenzar</button></a>
 
                         <!--===== ARCHIVO JS - VALIDACION DE REGISTRO =====-->
                         <script src="../../Modelo/Archivos_JS/Notifi_Inicio_Session.js"></script>

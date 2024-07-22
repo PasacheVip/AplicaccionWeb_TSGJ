@@ -39,7 +39,7 @@ if (!isset($_SESSION['usuario'])) {
 <body>
     
     <nav class="sidebar close">
-
+    
         <header>
 
             <div class="image-text">
