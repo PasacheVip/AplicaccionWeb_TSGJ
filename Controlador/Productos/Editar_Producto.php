@@ -49,14 +49,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $resultCheckStock = $stmtCheckStock->get_result();
 
             if ($resultCheckStock->num_rows > 0) {
+
                 $rowCheckStock = $resultCheckStock->fetch_assoc();
                 $cantidadEnStock = $rowCheckStock['stock_disponible'];
 
                 if ($cantidadEnStock < 0) {
+                    // 
                     throw new Exception("El stock no puede ser negativo.");
                 }
 
-                if ($cantidadEnStock <= 1) {
+                if ($cantidadEnStock = 2) {
                     // Aquí se puede enviar una notificación sobre el bajo stock
                     $_SESSION['stock_bajo'] = $idProducto;
                 }
@@ -73,15 +75,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Enviar una respuesta exitosa
                 echo json_encode(['success' => true]);
             } else {
+
                 throw new Exception("Producto no encontrado.");
             }
         } else {
+
             throw new Exception("Requerimiento no encontrado.");
         }
-        
     } catch (Exception $e) {
+
         // Revertir la transacción en caso de error
         $conn->rollback();
+
         // Enviar una respuesta de error
         echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     }
@@ -89,4 +94,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Cerrar la conexión a la base de datos
     $conn->closeConnection();
 }
-?>

@@ -11,6 +11,7 @@ function editarCantidad(id, cantidadActual) {
         preConfirm: (cantidad) => {
 
             return new Promise((resolve, reject) => {
+                
                 // Enviar la solicitud AJAX para actualizar la cantidad
                 fetch('../../Controlador/Productos/Editar_Producto.php', {
                     method: 'POST',
