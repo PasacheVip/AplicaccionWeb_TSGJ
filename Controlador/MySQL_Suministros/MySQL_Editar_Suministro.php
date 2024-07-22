@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Vincular parámetros y ejecutar la consulta
-        $stmt->bind_param("iiissiii", $id_categoria, $id_presentacion, $id_proveedor, $codigo, $producto, $precio, $stock_disponible, $id_mantenimiento);
+        $stmt->bind_param("iiissdii", $id_categoria, $id_presentacion, $id_proveedor, $codigo, $producto, $precio, $stock_disponible, $id_producto);
 
         // Ejecutar la consulta
         if ($stmt->execute()) {

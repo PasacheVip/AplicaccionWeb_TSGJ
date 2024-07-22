@@ -54,15 +54,15 @@
         
         <!-- ===== ENCARGADO DEL MANTENIMIENTO ===== -->
         <label for="nombre">Encargado Del Mantenimiento:</label>
-        <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this)" required>
+        <input type="text" id="encargado" name="encargado" onkeyup="convertirAMayusculas(this)" >
         
         <!-- ===== DESCRIPCION DEL MANTENIMIENTO ===== -->
         <label for="descripcion">Descripción Del Mantenimiento</label>
-        <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this)" required>
+        <input type="text" id="descripcion" name="descripcion" onkeyup="convertirAMayusculas(this)" >
         
         <!-- ===== SELECCIONAR PRODUCTOS ===== -->
         <label for="productos">Productos a Utilizar:</label>
-        <select id="produtos" name="produtos">
+        <select id="productos" name="productos">
             <option value="">Seleccione un Producto</option> <!-- Opción por defecto para seleccionar -->
             <?php
                 while ($dataSelect = mysqli_fetch_array($dataProductoSelect)) { ?>
@@ -76,7 +76,7 @@
         
         <!-- ===== PRODUCTOS SELECCIONADOS ===== -->
         <label style="margin-top: 20px;" for="productosSeleccionados">Productos Seleccionados:</label>
-        <ul id="productosSeleccionados">
+        <ul id="productosSeleccionados" name="productosSeleccionados">
             <!-- Aquí se mostrarán los productos seleccionados -->
         </ul>
 

@@ -101,7 +101,7 @@ $conn = new Conexion_BD();
                             echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00 <a href='../../Controlador/Tipo_Cambio/MySQL_TipoDeCambio.php?valor=" . $row['precio'] . "'><i class='bx bxs-badge-dollar'></i></a></td>";
                             echo "<td>
                                 <a href='Editar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
-                                <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
+                                <a href='#' onclick='confirmarEliminacion(" . $row['id_producto'] . ")'><i class='bx bx-trash bx-sm'></i></a>
                              </td>";
                             echo "</tr>";
                         }
@@ -121,7 +121,10 @@ $conn = new Conexion_BD();
         <!-- ==== ARCHIVO JS - NOTIFIFACION DE AGREGAR SUMINISTRO ===== -->
         <script src="../../Modelo/Archivos_JS/Notificaciones/Suministros/Notifi_Agregar_Suministro.js"></script>
 
-        <!-- ==== NOTIFICACION DE LA ELIMINACION DEL MANTENIMIENTO ===== -->
+        <!-- ==== ARCHIVO JS - CONFIRMACION PARA LA ELIMINACION DEL MANTENIMIENTO ===== -->
+        <script src="../../Modelo/Archivos_JS/Gestion_Suministros/Eliminar_Suministro.js"></script>
+
+        <!-- ==== NOTIFICACION DE USO GENERAL (SUCCES-ERROR) ===== -->
         <?php require_once '../../Modelo/Archivos_JS/Notificaciones/Succes_Error/notification.php'; ?>
 
         <!--===== ARCHIVO JS - NOTIFIFACION DE TIPO DE CAMBIO ===== -->

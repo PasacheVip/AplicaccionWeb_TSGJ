@@ -116,7 +116,7 @@ $conn = new Conexion_BD();
         <!-- ==== ARCHIVO JS - CONFIRMACION PARA LA ELIMINACION DEL MANTENIMIENTO ===== -->
         <script src="../../Modelo/Archivos_JS/Gestion_Mantenimientos/Eliminar_Mantenimiento.js"></script>
 
-        <!-- ==== NOTIFICACION DE LA ELIMINACION DEL MANTENIMIENTO ===== -->
+        <!-- ==== NOTIFICACION DE USO GENERAL (SUCCES-ERROR) ===== -->
         <?php require_once '../../Modelo/Archivos_JS/Notificaciones/Succes_Error/notification.php'; ?>
 
 </body>

@@ -1,6 +1,7 @@
 /* global Swal */
 
 function validarFormulario(evento) {
+
     evento.preventDefault();
 
     // Select Vehiculo
@@ -46,13 +47,13 @@ function validarFormulario(evento) {
     }
 
     // Select productos
-    var productos = document.querySelector('select[name="productosSeleccionados"]').value;
-    if (productos.length === 0) {
+    var productosSeleccionados = document.getElementById("productos").value;
+    if (productosSeleccionados.length === 0) {
         Swal.fire({
             width: '23rem',
             position: 'center',
             icon: 'info',
-            title: 'Por favor, Seleccione el Producto a Utilizar.',
+            title: 'Por favor, Seleccione el Producto(s) a Utilizar.',
             showConfirmButton: false,
             timer: 1500
         });

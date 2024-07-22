@@ -1,9 +1,12 @@
 function agregarProducto() {
-    var select = document.getElementById("produtos");
+
+    var select = document.getElementById("productos");
     var selectedOption = select.options[select.selectedIndex];
+
     if (selectedOption.value !== "") {
+
         var selectedList = document.getElementById("productosSeleccionados");
-        
+
         // Verificar si el producto ya ha sido agregado
         var items = selectedList.getElementsByTagName("li");
         for (var i = 0; i < items.length; i++) {
@@ -33,7 +36,7 @@ function agregarProducto() {
         cantidadInput.value = 1; // Valor por defecto
         cantidadInput.style.width = "40px";
         cantidadInput.style.marginRight = "10px"; // Espacio entre cantidad y botón eliminar
-        
+
         li.dataset.id = selectedOption.value;
         li.appendChild(cantidadInput);
 
@@ -41,7 +44,7 @@ function agregarProducto() {
         var removeButton = document.createElement("button");
         removeButton.textContent = "Eliminar";
         removeButton.className = "remove-button";
-        removeButton.onclick = function() {
+        removeButton.onclick = function () {
             li.remove();
             actualizarProductosSeleccionados();
         };
@@ -49,14 +52,19 @@ function agregarProducto() {
         li.appendChild(removeButton);
         selectedList.appendChild(li);
         actualizarProductosSeleccionados();
+
     }
 }
 
 function actualizarProductosSeleccionados() {
+
     var selectedList = document.getElementById("productosSeleccionados");
     var selectedInputs = document.getElementById("productosSeleccionadosInputs");
+
     selectedInputs.innerHTML = ""; // Limpiar campos ocultos
+    
     var items = selectedList.getElementsByTagName("li");
+
     for (var i = 0; i < items.length; i++) {
         var input = document.createElement("input");
         input.type = "hidden";
