@@ -68,7 +68,7 @@ if (!isset($_SESSION['usuario'])) {
                 <ul class="menu-links">
 
                     <li class="nav-link">
-                        <a href="Bienvenida.php">
+                        <a href="../General/Bienvenida.php">
                             <i class='bx bx-home-alt-2 icon'></i>
                             <span class="text nav-text">Inicio</span>
                         </a>

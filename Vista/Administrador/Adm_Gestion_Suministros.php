@@ -14,7 +14,7 @@ $conn = new Conexion_BD();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Mantenimientos</title>
+    <title>Gestión de Suministros</title>
 
     <!-- Icono de Pagina -->
     <link rel="icon" href="../../Modelo/Archivos_Media/Color_LogoTipo.png" type="image/png">
@@ -100,7 +100,7 @@ $conn = new Conexion_BD();
                             echo "<td style='text-align: left;'>" . $row['producto'] . "</td>";
                             echo "<td style='text-align: right;'> S/ " . $row['precio'] . ".00 <a href='../../Controlador/Tipo_Cambio/MySQL_TipoDeCambio.php?valor=" . $row['precio'] . "'><i class='bx bxs-badge-dollar'></i></a></td>";
                             echo "<td>
-                                <a href='Adm_Editar_Mantenimiento?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
+                                <a href='Editar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-edit bx-sm'></i></a>
                                 <a href='../../Controlador/Ctrl_Administrador/MySQL_Borrar_Suministro.php?ID_S=" . $row['id_producto'] . "'><i class='bx bx-trash bx-sm'></i></a>
                              </td>";
                             echo "</tr>";
